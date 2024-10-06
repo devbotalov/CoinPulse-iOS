@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
-		657A160A2CB27C7C00C6CF1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16092CB27C7C00C6CF1F /* ViewController.swift */; };
-		657A160D2CB27C7C00C6CF1F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 657A160C2CB27C7C00C6CF1F /* Base */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
 		657A16122CB27C7D00C6CF1F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 657A16112CB27C7D00C6CF1F /* Base */; };
 /* End PBXBuildFile section */
@@ -19,8 +17,6 @@
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		657A16092CB27C7C00C6CF1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		657A160C2CB27C7C00C6CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		657A160E2CB27C7D00C6CF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657A16112CB27C7D00C6CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		657A16132CB27C7D00C6CF1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,69 @@
 		657A16042CB27C7C00C6CF1F /* CoinPulse-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				657A16052CB27C7C00C6CF1F /* AppDelegate.swift */,
-				657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */,
-				657A16092CB27C7C00C6CF1F /* ViewController.swift */,
-				657A160B2CB27C7C00C6CF1F /* Main.storyboard */,
-				657A160E2CB27C7D00C6CF1F /* Assets.xcassets */,
-				657A16102CB27C7D00C6CF1F /* LaunchScreen.storyboard */,
-				657A16132CB27C7D00C6CF1F /* Info.plist */,
+				657A161A2CB2F36A00C6CF1F /* Application */,
+				657A161D2CB2F3C800C6CF1F /* Common */,
+				657A161B2CB2F3A500C6CF1F /* Models */,
+				657A161F2CB2F40200C6CF1F /* Scenes */,
+				657A161C2CB2F3BC00C6CF1F /* Services */,
+				657A16192CB2F35300C6CF1F /* Resources */,
+				657A161E2CB2F3E100C6CF1F /* Extensions */,
 			);
 			path = "CoinPulse-iOS";
+			sourceTree = "<group>";
+		};
+		657A16192CB2F35300C6CF1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				657A160E2CB27C7D00C6CF1F /* Assets.xcassets */,
+				657A16132CB27C7D00C6CF1F /* Info.plist */,
+				657A16102CB27C7D00C6CF1F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		657A161A2CB2F36A00C6CF1F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				657A16052CB27C7C00C6CF1F /* AppDelegate.swift */,
+				657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		657A161B2CB2F3A500C6CF1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		657A161C2CB2F3BC00C6CF1F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		657A161D2CB2F3C800C6CF1F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		657A161E2CB2F3E100C6CF1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		657A161F2CB2F40200C6CF1F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +177,6 @@
 			files = (
 				657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */,
 				657A16122CB27C7D00C6CF1F /* Base in Resources */,
-				657A160D2CB27C7C00C6CF1F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				657A160A2CB27C7C00C6CF1F /* ViewController.swift in Sources */,
 				657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +195,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		657A160B2CB27C7C00C6CF1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				657A160C2CB27C7C00C6CF1F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		657A16102CB27C7D00C6CF1F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,17 +329,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66STM82H6X;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoinPulse-iOS/Info.plist";
+				INFOPLIST_FILE = "CoinPulse-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Coin Pulse";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +348,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devbotalov.CoinPulse-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,17 +362,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66STM82H6X;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoinPulse-iOS/Info.plist";
+				INFOPLIST_FILE = "CoinPulse-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Coin Pulse";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +381,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devbotalov.CoinPulse-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
