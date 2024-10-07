@@ -18,9 +18,9 @@ struct AddOperation: ModuleProtocol {
     typealias RoutingLogic = AddOperationRoutingLogic & AddOperationDataPassing & NSObject
     
     typealias ViewController = AddOperationViewController
-    typealias Router = AddOperationRouter
-    typealias Interactor = AddOperationInteractor
     typealias Presenter = AddOperationPresenter
+    typealias Interactor = AddOperationInteractor
+    typealias Router = AddOperationRouter
 }
 
 protocol AddOperationDataStore {}

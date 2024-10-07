@@ -8,6 +8,10 @@
 import Foundation
 
 protocol ServiceLocatorProtocol {
-    func register<T>(service: T)
+    func register<T>(service: T, completion: ((T) -> Void)?)
     func resolve<T>() -> T?
+}
+
+extension ServiceLocatorProtocol {
+    func register<T>(service: T, completion: ((T) -> Void)? = nil) {}
 }

@@ -9,7 +9,7 @@ import UIKit
 
 struct AddOperationConfigurator: ConfiguratorProtocol {
     static func configureViewController(for locator: ServiceLocatorProtocol) {
-        if let viewController = locator.resolve() as AddOperation.ViewController? {
+        locator.register(service: AddOperation.ViewController()) { viewController in
             let interactor = AddOperationInteractor()
             let presenter = AddOperationPresenter()
             let router = AddOperationRouter()
@@ -33,7 +33,7 @@ struct AddOperationConfigurator: ConfiguratorProtocol {
     static func configurePresenter(for locator: ServiceLocatorProtocol) {
         locator.register(service: AddOperation.Presenter())
     }
-
+    
     static func configureRouter(for locator: ServiceLocatorProtocol) {
         locator.register(service: AddOperation.Router())
     }
