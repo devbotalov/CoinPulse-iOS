@@ -11,6 +11,14 @@
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
 		657A16122CB27C7D00C6CF1F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 657A16112CB27C7D00C6CF1F /* Base */; };
+		657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16242CB2F64F00C6CF1F /* BaseViewController.swift */; };
+		657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16282CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift */; };
+		657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A162A2CB2F86F00C6CF1F /* ServiceLocator.swift */; };
+		657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A162D2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift */; };
+		657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16302CB2F94800C6CF1F /* ModuleProtocol.swift */; };
+		657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */; };
+		657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */; };
+		657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16382CB3AAD100C6CF1F /* TabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		657A160E2CB27C7D00C6CF1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		657A16112CB27C7D00C6CF1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		657A16132CB27C7D00C6CF1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		657A16242CB2F64F00C6CF1F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		657A16282CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocatorProtocol.swift; sourceTree = "<group>"; };
+		657A162A2CB2F86F00C6CF1F /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		657A162D2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		657A16302CB2F94800C6CF1F /* ModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProtocol.swift; sourceTree = "<group>"; };
+		657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProtocol.swift; sourceTree = "<group>"; };
+		657A16382CB3AAD100C6CF1F /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +101,7 @@
 		657A161B2CB2F3A500C6CF1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				657A16372CB3AACC00C6CF1F /* TabBarItem */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +116,8 @@
 		657A161D2CB2F3C800C6CF1F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				657A16262CB2F79300C6CF1F /* DI */,
+				657A16202CB2F4EC00C6CF1F /* UI */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -115,6 +134,75 @@
 			children = (
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		657A16202CB2F4EC00C6CF1F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				657A16322CB3A9BC00C6CF1F /* BaseTabBarController */,
+				657A16212CB2F4F200C6CF1F /* BaseViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		657A16212CB2F4F200C6CF1F /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				657A16242CB2F64F00C6CF1F /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		657A16262CB2F79300C6CF1F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				657A16272CB2F83700C6CF1F /* ServiceLocator */,
+				657A162F2CB2F92D00C6CF1F /* Module */,
+				657A162C2CB2F8A200C6CF1F /* Configurator */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		657A16272CB2F83700C6CF1F /* ServiceLocator */ = {
+			isa = PBXGroup;
+			children = (
+				657A16282CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift */,
+				657A162A2CB2F86F00C6CF1F /* ServiceLocator.swift */,
+			);
+			path = ServiceLocator;
+			sourceTree = "<group>";
+		};
+		657A162C2CB2F8A200C6CF1F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				657A162D2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		657A162F2CB2F92D00C6CF1F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				657A16302CB2F94800C6CF1F /* ModuleProtocol.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		657A16322CB3A9BC00C6CF1F /* BaseTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */,
+			);
+			path = BaseTabBarController;
+			sourceTree = "<group>";
+		};
+		657A16372CB3AACC00C6CF1F /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */,
+				657A16382CB3AAD100C6CF1F /* TabBarItem.swift */,
+			);
+			path = TabBarItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
 				657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */,
+				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
+				657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */,
+				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
+				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
+				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
+				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
+				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
