@@ -39,6 +39,8 @@ private extension CoreDataManager {
     }
     
     func saveContext() throws {
-        try? context?.save()
+        if context?.hasChanges ?? false {
+            try? context?.save()
+        }
     }
 }

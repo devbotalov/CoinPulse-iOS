@@ -30,6 +30,8 @@
 		655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78732CB3E43400773C64 /* CoreDataManagerProtocol.swift */; };
 		655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78762CB3E4D500773C64 /* CoreDataManager.swift */; };
 		655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */; };
+		655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */; };
+		655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		655D78732CB3E43400773C64 /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
 		655D78762CB3E4D500773C64 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		655D787D2CB3E5BE00773C64 /* PersistentContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentContainer.xcdatamodel; sourceTree = "<group>"; };
+		655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+EncodeToData.swift"; sourceTree = "<group>"; };
+		655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+DecodeToColor.swift"; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +292,22 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		655D787F2CB3EACC00773C64 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		655D78822CB3EB0200773C64 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +387,8 @@
 		657A161E2CB2F3E100C6CF1F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				655D78822CB3EB0200773C64 /* Swift */,
+				655D787F2CB3EACC00773C64 /* UI */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +558,7 @@
 				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
+				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
@@ -550,6 +573,7 @@
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
+				655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */,
 				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
