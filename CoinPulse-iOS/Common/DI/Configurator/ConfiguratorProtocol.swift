@@ -18,7 +18,7 @@ protocol ConfiguratorProtocol {
 }
 
 extension ConfiguratorProtocol {
-    static func registerDependencies(in locator: ServiceLocator) {
+    static func registerDependencies(in locator: ServiceLocatorProtocol) {
         configureViewController(for: locator)
         configureInteractor(for: locator)
         configureWorker(for: locator)
@@ -26,8 +26,8 @@ extension ConfiguratorProtocol {
         configurePresenter(for: locator)
     }
     
-    static func configureInteractor(for locator: ServiceLocator) {}
-    static func configureWorker(for locator: ServiceLocator) {}
-    static func configureRouter(for locator: ServiceLocator) {}
-    static func configurePresenter(for locator: ServiceLocator) {}
+    static func configureInteractor(for locator: ServiceLocatorProtocol) {}
+    static func configureWorker(for locator: ServiceLocatorProtocol) {}
+    static func configureRouter(for locator: ServiceLocatorProtocol) {}
+    static func configurePresenter(for locator: ServiceLocatorProtocol) {}
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78252CB3B17E00773C64 /* AddOperation.swift */; };
+		655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */; };
+		655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D782B2CB3B45500773C64 /* AddOperationViewController.swift */; };
+		655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D782E2CB3B4C300773C64 /* AddOperationRouter.swift */; };
+		655D78322CB3B4FA00773C64 /* AddOperationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78312CB3B4FA00773C64 /* AddOperationInteractor.swift */; };
+		655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78342CB3B52400773C64 /* AddOperationPresenter.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -22,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		655D78252CB3B17E00773C64 /* AddOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperation.swift; sourceTree = "<group>"; };
+		655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationConfigurator.swift; sourceTree = "<group>"; };
+		655D782B2CB3B45500773C64 /* AddOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationViewController.swift; sourceTree = "<group>"; };
+		655D782E2CB3B4C300773C64 /* AddOperationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationRouter.swift; sourceTree = "<group>"; };
+		655D78312CB3B4FA00773C64 /* AddOperationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationInteractor.swift; sourceTree = "<group>"; };
+		655D78342CB3B52400773C64 /* AddOperationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationPresenter.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +61,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		655D78242CB3B16B00773C64 /* AddOperation */ = {
+			isa = PBXGroup;
+			children = (
+				655D78252CB3B17E00773C64 /* AddOperation.swift */,
+				655D78272CB3B1C600773C64 /* Configurator */,
+				655D782A2CB3B44800773C64 /* ViewController */,
+				655D78302CB3B4E900773C64 /* Interactor */,
+				655D78332CB3B51000773C64 /* Presenter */,
+				655D782D2CB3B4B500773C64 /* Router */,
+			);
+			path = AddOperation;
+			sourceTree = "<group>";
+		};
+		655D78272CB3B1C600773C64 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		655D782A2CB3B44800773C64 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				655D782B2CB3B45500773C64 /* AddOperationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		655D782D2CB3B4B500773C64 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				655D782E2CB3B4C300773C64 /* AddOperationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		655D78302CB3B4E900773C64 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				655D78312CB3B4FA00773C64 /* AddOperationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		655D78332CB3B51000773C64 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				655D78342CB3B52400773C64 /* AddOperationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +197,7 @@
 		657A161F2CB2F40200C6CF1F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				655D78242CB3B16B00773C64 /* AddOperation */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -275,14 +341,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */,
+				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
 				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
 				657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */,
+				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
 				657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */,
+				655D78322CB3B4FA00773C64 /* AddOperationInteractor.swift in Sources */,
+				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
+				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);

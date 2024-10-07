@@ -10,12 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var serviceLocator: ServiceLocatorProtocol?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        setupLocator()
+        
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = BaseTabBarController()
+        window?.rootViewController = BaseTabBarController(serviceLocator: serviceLocator)
         window?.makeKeyAndVisible()
     }
 
@@ -50,3 +53,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+private extension SceneDelegate {
+    private func setupLocator() {
+        serviceLocator = ServiceLocator()
+        registerDependencies(in: serviceLocator)
+    }
+    
+    private func registerDependencies(in serviceLocator: ServiceLocatorProtocol?) {
+        guard let serviceLocator else { return }
+        
+        AddOperation.Configurator.registerDependencies(in: serviceLocator)
+    }
+}
