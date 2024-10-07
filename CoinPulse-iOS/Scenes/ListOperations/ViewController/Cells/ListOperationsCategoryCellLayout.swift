@@ -14,7 +14,7 @@ final class ListOperationsCategoryCellLayout {
     static func layout() -> NSCollectionLayoutSection {
         let sizeItem = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(100)
+            heightDimension: .absolute(60)
         )
         
         let item = NSCollectionLayoutItem(
@@ -34,6 +34,32 @@ final class ListOperationsCategoryCellLayout {
         let section = NSCollectionLayoutSection(
             group: group
         )
+        
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 16, leading: 32, bottom: 32, trailing: 32
+        )
+        
+        let sizeHeader = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(60)
+        )
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: sizeHeader,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let background = NSCollectionLayoutDecorationItem.background(
+            elementKind: RoundedBackgroundView.kindView
+        )
+        background.contentInsets = NSDirectionalEdgeInsets(
+            top: 20, leading: 20, bottom: 20, trailing: 20
+        )
+        
+        section.interGroupSpacing = 10
+        section.boundarySupplementaryItems = [header]
+        section.decorationItems = [background]
         
         return section
     }

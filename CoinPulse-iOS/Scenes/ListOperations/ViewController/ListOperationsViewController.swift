@@ -32,7 +32,13 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     override func setupReusableView() {
         super.setupReusableView()
         collectionView.registerCell(ListOperationsCategoryCell.self)
+        
         collectionView.registerHeader(LargeHeaderReusableView.self)
+        
+        collectionView.registerBackground(
+            RoundedBackgroundView.self,
+            forDecorationViewOfKind: RoundedBackgroundView.kindView
+        )
     }
     
     override func setupDataSource() {
@@ -62,7 +68,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                             titleButton: "View all",
                             delegate: self
                         )
-                        return nil
+                        return header
                         
                     case .unknown:
                         return BaseCollectionReusableView()
@@ -78,7 +84,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         
         snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, Int>()
         snapshot.appendSections([.categories])
-        snapshot.appendItems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], toSection: .categories)
+        snapshot.appendItems([1, 2, 3, 4], toSection: .categories)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }

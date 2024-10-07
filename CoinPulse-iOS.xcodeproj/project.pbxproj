@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651B2B732CB4640100D8EAF1 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B722CB4640100D8EAF1 /* UIView+CornerRadius.swift */; };
+		651B2B772CB465A000D8EAF1 /* CategoryEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B762CB465A000D8EAF1 /* CategoryEmojiView.swift */; };
+		651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B792CB465E700D8EAF1 /* BaseView.swift */; };
+		651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B7B2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift */; };
+		651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */; };
 		655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78252CB3B17E00773C64 /* AddOperation.swift */; };
 		655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */; };
 		655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D782B2CB3B45500773C64 /* AddOperationViewController.swift */; };
@@ -65,6 +70,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651B2B722CB4640100D8EAF1 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		651B2B762CB465A000D8EAF1 /* CategoryEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEmojiView.swift; sourceTree = "<group>"; };
+		651B2B792CB465E700D8EAF1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		651B2B7B2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEmojiViewProtocol.swift; sourceTree = "<group>"; };
+		651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
 		655D78252CB3B17E00773C64 /* AddOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperation.swift; sourceTree = "<group>"; };
 		655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationConfigurator.swift; sourceTree = "<group>"; };
 		655D782B2CB3B45500773C64 /* AddOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +145,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		651B2B712CB463F800D8EAF1 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				651B2B722CB4640100D8EAF1 /* UIView+CornerRadius.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		651B2B742CB4658500D8EAF1 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				651B2B752CB4659000D8EAF1 /* CategoryEmojiView */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		651B2B752CB4659000D8EAF1 /* CategoryEmojiView */ = {
+			isa = PBXGroup;
+			children = (
+				651B2B7B2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift */,
+				651B2B762CB465A000D8EAF1 /* CategoryEmojiView.swift */,
+			);
+			path = CategoryEmojiView;
+			sourceTree = "<group>";
+		};
+		651B2B782CB465E000D8EAF1 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				651B2B792CB465E700D8EAF1 /* BaseView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		651B2B7D2CB46F3100D8EAF1 /* RoundedBackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */,
+			);
+			path = RoundedBackgroundView;
+			sourceTree = "<group>";
+		};
 		655D78242CB3B16B00773C64 /* AddOperation */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +383,7 @@
 		655D787F2CB3EACC00773C64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				651B2B712CB463F800D8EAF1 /* UIView */,
 				655D78BD2CB40AD200773C64 /* UICollectionView */,
 				655D78BC2CB40AC800773C64 /* UIColor */,
 				655D78BB2CB40AC100773C64 /* UILabel */,
@@ -397,6 +449,7 @@
 				657A16212CB2F4F200C6CF1F /* BaseViewController */,
 				655D78AC2CB3FC5000773C64 /* BaseCollectionReusableView */,
 				655D78BE2CB40B0300773C64 /* BaseCollectionViewCell */,
+				651B2B782CB465E000D8EAF1 /* BaseView */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -472,6 +525,7 @@
 		655D78C12CB40B4300773C64 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				651B2B7D2CB46F3100D8EAF1 /* RoundedBackgroundView */,
 				655D78C22CB40B5800773C64 /* ReusableView.swift */,
 			);
 			path = ReusableView;
@@ -594,9 +648,10 @@
 			isa = PBXGroup;
 			children = (
 				655D78AB2CB3FC4600773C64 /* Base */,
+				655D78C12CB40B4300773C64 /* ReusableView */,
 				655D78C52CB41B5F00773C64 /* UICollectionView */,
 				655D78A82CB3FC0800773C64 /* UICollectionReusableView */,
-				655D78C12CB40B4300773C64 /* ReusableView */,
+				651B2B742CB4658500D8EAF1 /* UIView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -738,6 +793,7 @@
 				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
 				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
 				655D785D2CB3D6D500773C64 /* Profile.swift in Sources */,
+				651B2B732CB4640100D8EAF1 /* UIView+CornerRadius.swift in Sources */,
 				657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */,
 				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
@@ -754,6 +810,7 @@
 				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78CC2CB41ED400773C64 /* ListOperationsCategoryCellLayout.swift in Sources */,
+				651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
 				655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */,
@@ -775,16 +832,19 @@
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,
+				651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
 				655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */,
 				655D78C02CB40B1100773C64 /* BaseCollectionViewCell.swift in Sources */,
+				651B2B772CB465A000D8EAF1 /* CategoryEmojiView.swift in Sources */,
 				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,
 				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
+				651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

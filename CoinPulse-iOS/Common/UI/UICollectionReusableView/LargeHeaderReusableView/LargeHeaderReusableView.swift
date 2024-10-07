@@ -51,12 +51,12 @@ final class LargeHeaderReusableView: BaseCollectionReusableView {
         super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: actionButton.leadingAnchor),
             
-            actionButton.topAnchor.constraint(equalTo: topAnchor),
+            actionButton.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
             actionButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
