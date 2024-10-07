@@ -25,6 +25,8 @@
 		655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78672CB3D77200773C64 /* ProfilePresenter.swift */; };
 		655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78692CB3D77700773C64 /* ProfileInteractor.swift */; };
 		655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D786B2CB3D77E00773C64 /* ProfileRouter.swift */; };
+		655D786E2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 655D786D2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings */; };
+		655D78712CB3DDD900773C64 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78702CB3DDD900773C64 /* Localizable.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		655D78672CB3D77200773C64 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		655D78692CB3D77700773C64 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		655D786B2CB3D77E00773C64 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		655D786D2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = BaseTabBarLocalizable.xcstrings; sourceTree = "<group>"; };
+		655D78702CB3DDD900773C64 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +248,15 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		655D786F2CB3DD8D00773C64 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				655D78702CB3DDD900773C64 /* Localizable.swift */,
+				655D786D2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +290,7 @@
 		657A16192CB2F35300C6CF1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				655D786F2CB3DD8D00773C64 /* Localizable */,
 				657A160E2CB27C7D00C6CF1F /* Assets.xcassets */,
 				657A16132CB27C7D00C6CF1F /* Info.plist */,
 				657A16102CB27C7D00C6CF1F /* LaunchScreen.storyboard */,
@@ -445,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 657A15F92CB27C7C00C6CF1F;
 			productRefGroup = 657A16032CB27C7C00C6CF1F /* Products */;
@@ -463,6 +478,7 @@
 			files = (
 				657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */,
 				657A16122CB27C7D00C6CF1F /* Base in Resources */,
+				655D786E2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +497,7 @@
 				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
 				657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */,
+				655D78712CB3DDD900773C64 /* Localizable.swift in Sources */,
 				655D78322CB3B4FA00773C64 /* AddOperationInteractor.swift in Sources */,
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
@@ -652,7 +669,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +702,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

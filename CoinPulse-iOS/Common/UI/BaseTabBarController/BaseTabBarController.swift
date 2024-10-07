@@ -38,8 +38,14 @@ private extension BaseTabBarController {
         if let addOperationViewController = serviceLocator?.resolve() as AddOperation.ViewController? {
             let addOperationNavigationController = setupNavigationController(
                 tabBarItem: TabBarItem(
-                    navigationBarTitle: "Add a new operation",
-                    tabBarTitle: "Add",
+                    navigationBarTitle: String(
+                        localized: Localizable.TabBar.Add.navigationBar,
+                        table: Localizable.TabBar.localizable
+                    ),
+                    tabBarTitle: String(
+                        localized: Localizable.TabBar.Add.tabBar,
+                        table: Localizable.TabBar.localizable
+                    ),
                     tabBarImage: UIImage(systemName: "plus"),
                     rootViewController: addOperationViewController
                 )
@@ -51,8 +57,14 @@ private extension BaseTabBarController {
         if let listOperationsViewController = serviceLocator?.resolve() as ListOperations.ViewController? {
             let listOperationsNavigationController = setupNavigationController(
                 tabBarItem: TabBarItem(
-                    navigationBarTitle: "List of operations",
-                    tabBarTitle: "List",
+                    navigationBarTitle: String(
+                        localized: Localizable.TabBar.List.navigationBar,
+                        table: Localizable.TabBar.localizable
+                    ),
+                    tabBarTitle: String(
+                        localized: Localizable.TabBar.List.tabBar,
+                        table: Localizable.TabBar.localizable
+                    ),
                     tabBarImage: UIImage(systemName: "list.dash"),
                     rootViewController: listOperationsViewController
                 )
@@ -64,8 +76,14 @@ private extension BaseTabBarController {
         if let profileViewController = serviceLocator?.resolve() as Profile.ViewController? {
             let profileNavigationController = setupNavigationController(
                 tabBarItem: TabBarItem(
-                    navigationBarTitle: "Profile",
-                    tabBarTitle: "Profile",
+                    navigationBarTitle: String(
+                        localized: Localizable.TabBar.Profile.navigationBar,
+                        table: Localizable.TabBar.localizable
+                    ),
+                    tabBarTitle: String(
+                        localized: Localizable.TabBar.Profile.tabBar,
+                        table: Localizable.TabBar.localizable
+                    ),
                     tabBarImage: UIImage(systemName: "person.fill"),
                     rootViewController: profileViewController
                 )
