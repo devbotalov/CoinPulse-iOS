@@ -19,6 +19,12 @@
 		655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78422CB3D32C00773C64 /* ListOperationsPresenter.swift */; };
 		655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78442CB3D33200773C64 /* ListOperationsInteractor.swift */; };
 		655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78462CB3D33900773C64 /* ListOperationsRouter.swift */; };
+		655D785D2CB3D6D500773C64 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D785C2CB3D6D500773C64 /* Profile.swift */; };
+		655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78632CB3D76700773C64 /* ProfileConfigurator.swift */; };
+		655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78652CB3D76C00773C64 /* ProfileViewController.swift */; };
+		655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78672CB3D77200773C64 /* ProfilePresenter.swift */; };
+		655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78692CB3D77700773C64 /* ProfileInteractor.swift */; };
+		655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D786B2CB3D77E00773C64 /* ProfileRouter.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -46,6 +52,12 @@
 		655D78422CB3D32C00773C64 /* ListOperationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsPresenter.swift; sourceTree = "<group>"; };
 		655D78442CB3D33200773C64 /* ListOperationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsInteractor.swift; sourceTree = "<group>"; };
 		655D78462CB3D33900773C64 /* ListOperationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsRouter.swift; sourceTree = "<group>"; };
+		655D785C2CB3D6D500773C64 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		655D78632CB3D76700773C64 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
+		655D78652CB3D76C00773C64 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		655D78672CB3D77200773C64 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		655D78692CB3D77700773C64 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		655D786B2CB3D77E00773C64 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +191,59 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		655D785B2CB3D6BD00773C64 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				655D785C2CB3D6D500773C64 /* Profile.swift */,
+				655D785E2CB3D72600773C64 /* Configurator */,
+				655D785F2CB3D72900773C64 /* ViewController */,
+				655D78602CB3D72C00773C64 /* Presenter */,
+				655D78612CB3D72F00773C64 /* Interactor */,
+				655D78622CB3D73200773C64 /* Router */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		655D785E2CB3D72600773C64 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				655D78632CB3D76700773C64 /* ProfileConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		655D785F2CB3D72900773C64 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				655D78652CB3D76C00773C64 /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		655D78602CB3D72C00773C64 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				655D78672CB3D77200773C64 /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		655D78612CB3D72F00773C64 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				655D78692CB3D77700773C64 /* ProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		655D78622CB3D73200773C64 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				655D786B2CB3D77E00773C64 /* ProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +329,7 @@
 			children = (
 				655D78242CB3B16B00773C64 /* AddOperation */,
 				655D78362CB3D21B00773C64 /* ListOperations */,
+				655D785B2CB3D6BD00773C64 /* Profile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -410,6 +476,7 @@
 				655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */,
 				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
 				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
+				655D785D2CB3D6D500773C64 /* Profile.swift in Sources */,
 				657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */,
 				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
@@ -418,16 +485,21 @@
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
+				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
 				655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */,
+				655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */,
 				655D78412CB3D32500773C64 /* ListOperationsViewController.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
+				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
+				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
+				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

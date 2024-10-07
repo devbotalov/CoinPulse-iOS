@@ -61,6 +61,19 @@ private extension BaseTabBarController {
             navigationControllers.append(listOperationsNavigationController)
         }
         
+        if let profileViewController = serviceLocator?.resolve() as Profile.ViewController? {
+            let profileNavigationController = setupNavigationController(
+                tabBarItem: TabBarItem(
+                    navigationBarTitle: "Profile",
+                    tabBarTitle: "Profile",
+                    tabBarImage: UIImage(systemName: "person.fill"),
+                    rootViewController: profileViewController
+                )
+            )
+            
+            navigationControllers.append(profileNavigationController)
+        }
+        
         setViewControllers(navigationControllers, animated: false)
     }
     
