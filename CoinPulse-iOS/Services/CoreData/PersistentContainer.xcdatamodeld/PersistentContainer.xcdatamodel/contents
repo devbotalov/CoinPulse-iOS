@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23H124" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="CategoryEntity" representedClassName="CategoryEntity" syncable="YES" codeGenerationType="class">
+    <entity name="CategoryEntity" representedClassName=".CategoryEntity" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Transformable"/>
         <attribute name="emoji" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="operations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OperationEntity" inverseName="category" inverseEntity="OperationEntity"/>
     </entity>
-    <entity name="OperationEntity" representedClassName="OperationEntity" syncable="YES" codeGenerationType="class">
+    <entity name="OperationEntity" representedClassName=".OperationEntity" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

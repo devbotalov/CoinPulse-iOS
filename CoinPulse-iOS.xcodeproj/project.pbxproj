@@ -32,6 +32,10 @@
 		655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */; };
 		655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */; };
 		655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */; };
+		655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78912CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift */; };
+		655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */; };
+		655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */; };
+		655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -72,6 +76,10 @@
 		655D787D2CB3E5BE00773C64 /* PersistentContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentContainer.xcdatamodel; sourceTree = "<group>"; };
 		655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+EncodeToData.swift"; sourceTree = "<group>"; };
 		655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+DecodeToColor.swift"; sourceTree = "<group>"; };
+		655D78912CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +316,33 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		655D78952CB3EED000773C64 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				655D78962CB3EED300773C64 /* CategoryEntity */,
+				655D78972CB3EEDC00773C64 /* OperationEntity */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		655D78962CB3EED300773C64 /* CategoryEntity */ = {
+			isa = PBXGroup;
+			children = (
+				655D78912CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift */,
+				655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */,
+			);
+			path = CategoryEntity;
+			sourceTree = "<group>";
+		};
+		655D78972CB3EEDC00773C64 /* OperationEntity */ = {
+			isa = PBXGroup;
+			children = (
+				655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */,
+				655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */,
+			);
+			path = OperationEntity;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +396,7 @@
 		657A161B2CB2F3A500C6CF1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				655D78952CB3EED000773C64 /* CoreData */,
 				657A16372CB3AACC00C6CF1F /* TabBarItem */,
 			);
 			path = Models;
@@ -552,6 +588,8 @@
 				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
 				657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */,
+				655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */,
+				655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */,
 				655D78712CB3DDD900773C64 /* Localizable.swift in Sources */,
 				655D78322CB3B4FA00773C64 /* AddOperationInteractor.swift in Sources */,
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
@@ -576,6 +614,8 @@
 				655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */,
 				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
+				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,
+				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 			);
