@@ -63,6 +63,8 @@ private extension SceneDelegate {
     private func registerDependencies(in serviceLocator: ServiceLocatorProtocol?) {
         guard let serviceLocator else { return }
         
+        serviceLocator.register(service: CoreDataManager.shared)
+        
         AddOperation.Configurator.registerDependencies(in: serviceLocator)
         ListOperations.Configurator.registerDependencies(in: serviceLocator)
         Profile.Configurator.registerDependencies(in: serviceLocator)

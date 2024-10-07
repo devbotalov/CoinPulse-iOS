@@ -27,6 +27,9 @@
 		655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D786B2CB3D77E00773C64 /* ProfileRouter.swift */; };
 		655D786E2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 655D786D2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings */; };
 		655D78712CB3DDD900773C64 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78702CB3DDD900773C64 /* Localizable.swift */; };
+		655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78732CB3E43400773C64 /* CoreDataManagerProtocol.swift */; };
+		655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78762CB3E4D500773C64 /* CoreDataManager.swift */; };
+		655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		655D786B2CB3D77E00773C64 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		655D786D2CB3DA3700773C64 /* BaseTabBarLocalizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = BaseTabBarLocalizable.xcstrings; sourceTree = "<group>"; };
 		655D78702CB3DDD900773C64 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		655D78732CB3E43400773C64 /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		655D78762CB3E4D500773C64 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		655D787D2CB3E5BE00773C64 /* PersistentContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentContainer.xcdatamodel; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +263,31 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		655D78722CB3E42800773C64 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				655D78752CB3E4CC00773C64 /* CoreDataManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		655D78752CB3E4CC00773C64 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				655D78732CB3E43400773C64 /* CoreDataManagerProtocol.swift */,
+				655D78762CB3E4D500773C64 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		655D78782CB3E57E00773C64 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +349,8 @@
 		657A161C2CB2F3BC00C6CF1F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				655D78782CB3E57E00773C64 /* CoreData */,
+				655D78722CB3E42800773C64 /* Managers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -500,6 +533,7 @@
 				655D78712CB3DDD900773C64 /* Localizable.swift in Sources */,
 				655D78322CB3B4FA00773C64 /* AddOperationInteractor.swift in Sources */,
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
+				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
@@ -509,8 +543,10 @@
 				655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */,
 				655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */,
 				655D78412CB3D32500773C64 /* ListOperationsViewController.swift in Sources */,
+				655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
+				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
@@ -742,6 +778,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				655D787D2CB3E5BE00773C64 /* PersistentContainer.xcdatamodel */,
+			);
+			currentVersion = 655D787D2CB3E5BE00773C64 /* PersistentContainer.xcdatamodel */;
+			name = PersistentContainer.xcdatamodeld;
+			path = "/Users/devbotalov/Documents/CoinPulse-iOS/CoinPulse-iOS/Services/CoreData/PersistentContainer.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 657A15FA2CB27C7C00C6CF1F /* Project object */;
 }
