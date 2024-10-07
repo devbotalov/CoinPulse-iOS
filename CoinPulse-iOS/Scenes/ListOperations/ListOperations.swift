@@ -34,3 +34,11 @@ protocol ListOperationsPresentationLogic {}
 protocol ListOperationsBusinessLogic {}
 
 protocol ListOperationsRoutingLogic {}
+
+extension ListOperations {
+    
+    enum Sections: Hashable {
+        case categories
+        case unknown
+    }
+}

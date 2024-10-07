@@ -20,7 +20,12 @@ class BaseViewController<Router>: UIViewController {
         view.backgroundColor = UIColor(resource: .primaryBackground)
         
         setupNavigationBar()
+        
         setupCollectionView()
+        setupReusableView()
+        setupDataSource()
+        setupInitialSnapshot()
+        
         setupSubviews()
         setupConstraints()
     }
@@ -28,6 +33,12 @@ class BaseViewController<Router>: UIViewController {
     func setupNavigationBar() {}
     
     func setupCollectionView() {}
+    
+    func setupReusableView() {}
+    
+    func setupDataSource() {}
+    
+    func setupInitialSnapshot() {}
     
     func setupSubviews() {}
     
