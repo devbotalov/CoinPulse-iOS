@@ -64,9 +64,11 @@ final class LargeHeaderReusableView: BaseCollectionReusableView {
 }
 
 extension LargeHeaderReusableView: LargeHeaderReusableViewProtocol {
-    func configureView(with title: String, delegate: LargeHeaderReusableViewDelegate?) {
+    func configureView(with title: String, titleButton: String?, delegate: LargeHeaderReusableViewDelegate?) {
         self.delegate = delegate
         titleLabel.text = title
+        actionButton.setTitle(titleButton, for: .normal)
+        actionButton.isHidden = titleButton != nil ? false : true
     }
 }
 
