@@ -64,5 +64,6 @@ private extension SceneDelegate {
         guard let serviceLocator else { return }
         
         AddOperation.Configurator.registerDependencies(in: serviceLocator)
+        ListOperations.Configurator.registerDependencies(in: serviceLocator)
     }
 }

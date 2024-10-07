@@ -33,22 +33,35 @@ private extension BaseTabBarController {
         
         tabBar.isTranslucent = true
         
-        var viewControllers: [UIViewController] = []
+        var navigationControllers = [UINavigationController]()
         
-        if let addViewController = serviceLocator?.resolve() as AddOperation.ViewController? {
-            let addScene = setupNavigationController(
+        if let addOperationViewController = serviceLocator?.resolve() as AddOperation.ViewController? {
+            let addOperationNavigationController = setupNavigationController(
                 tabBarItem: TabBarItem(
                     navigationBarTitle: "Add a new operation",
                     tabBarTitle: "Add",
                     tabBarImage: UIImage(systemName: "plus"),
-                    rootViewController: addViewController
+                    rootViewController: addOperationViewController
                 )
             )
             
-            viewControllers.append(addScene)
+            navigationControllers.append(addOperationNavigationController)
         }
         
-        setViewControllers(viewControllers,animated: false)
+        if let listOperationsViewController = serviceLocator?.resolve() as ListOperations.ViewController? {
+            let listOperationsNavigationController = setupNavigationController(
+                tabBarItem: TabBarItem(
+                    navigationBarTitle: "List of operations",
+                    tabBarTitle: "List",
+                    tabBarImage: UIImage(systemName: "list.dash"),
+                    rootViewController: listOperationsViewController
+                )
+            )
+            
+            navigationControllers.append(listOperationsNavigationController)
+        }
+        
+        setViewControllers(navigationControllers, animated: false)
     }
     
     func setupNavigationController(tabBarItem: TabBarItemProtocol) -> UINavigationController {

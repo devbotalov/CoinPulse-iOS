@@ -1,5 +1,5 @@
 //
-//  AddOperationConfigurator.swift
+//  ListOperationsConfigurator.swift
 //  CoinPulse-iOS
 //
 //  Created by Maksim Botalov on 07.10.2024.
@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct AddOperationConfigurator: ConfiguratorProtocol {
+import Foundation
+
+struct ListOperationsConfigurator: ConfiguratorProtocol {
     static func configureViewController(for locator: ServiceLocatorProtocol) {
-        locator.register(service: AddOperation.ViewController()) { viewController in
-            let interactor = AddOperationInteractor()
-            let presenter = AddOperationPresenter()
-            let router = AddOperationRouter()
+        locator.register(service: ListOperations.ViewController()) { viewController in
+            let interactor = ListOperationsInteractor()
+            let presenter = ListOperationsPresenter()
+            let router = ListOperationsRouter()
             
             viewController.interactor = interactor
             viewController.router = router
@@ -27,14 +29,14 @@ struct AddOperationConfigurator: ConfiguratorProtocol {
     }
     
     static func configureInteractor(for locator: ServiceLocatorProtocol) {
-        locator.register(service: AddOperation.Interactor())
+        locator.register(service: ListOperations.Interactor())
     }
     
     static func configurePresenter(for locator: ServiceLocatorProtocol) {
-        locator.register(service: AddOperation.Presenter())
+        locator.register(service: ListOperations.Presenter())
     }
     
     static func configureRouter(for locator: ServiceLocatorProtocol) {
-        locator.register(service: AddOperation.Router())
+        locator.register(service: ListOperations.Router())
     }
 }
