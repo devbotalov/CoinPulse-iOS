@@ -37,6 +37,7 @@
 		655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */; };
 		655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */; };
 		655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78A12CB3F1FB00773C64 /* Injected.swift */; };
+		655D78A72CB3F57F00773C64 /* UILabel+ExtractColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78A62CB3F57F00773C64 /* UILabel+ExtractColor.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		655D78A12CB3F1FB00773C64 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		655D78A62CB3F57F00773C64 /* UILabel+ExtractColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+ExtractColor.swift"; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		655D787F2CB3EACC00773C64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				655D78A62CB3F57F00773C64 /* UILabel+ExtractColor.swift */,
 				655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */,
 			);
 			path = UI;
@@ -599,6 +602,7 @@
 				655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */,
 				657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */,
 				657A162B2CB2F86F00C6CF1F /* ServiceLocator.swift in Sources */,
+				655D78A72CB3F57F00773C64 /* UILabel+ExtractColor.swift in Sources */,
 				655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */,
 				655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */,
 				655D78712CB3DDD900773C64 /* Localizable.swift in Sources */,
