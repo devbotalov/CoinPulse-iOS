@@ -58,7 +58,7 @@ final class LargeHeaderReusableView: BaseCollectionReusableView {
             
             actionButton.topAnchor.constraint(equalTo: topAnchor),
             actionButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }

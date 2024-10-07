@@ -42,6 +42,10 @@
 		655D78AE2CB3FC5A00773C64 /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78AD2CB3FC5A00773C64 /* BaseCollectionReusableView.swift */; };
 		655D78B12CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B02CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift */; };
 		655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B22CB4060A00773C64 /* LargeHeaderReusableViewDelegate.swift */; };
+		655D78B62CB4086D00773C64 /* CollectionViewContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B52CB4086D00773C64 /* CollectionViewContaining.swift */; };
+		655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B92CB40ABE00773C64 /* UICollectionView+Register.swift */; };
+		655D78C02CB40B1100773C64 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78BF2CB40B1100773C64 /* BaseCollectionViewCell.swift */; };
+		655D78C32CB40B5800773C64 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78C22CB40B5800773C64 /* ReusableView.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -92,6 +96,10 @@
 		655D78AD2CB3FC5A00773C64 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		655D78B02CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHeaderReusableViewProtocol.swift; sourceTree = "<group>"; };
 		655D78B22CB4060A00773C64 /* LargeHeaderReusableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHeaderReusableViewDelegate.swift; sourceTree = "<group>"; };
+		655D78B52CB4086D00773C64 /* CollectionViewContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewContaining.swift; sourceTree = "<group>"; };
+		655D78B92CB40ABE00773C64 /* UICollectionView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Register.swift"; sourceTree = "<group>"; };
+		655D78BF2CB40B1100773C64 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		655D78C22CB40B5800773C64 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 		655D783A2CB3D2EE00773C64 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				655D78B72CB40A5D00773C64 /* Cells */,
 				655D78402CB3D32500773C64 /* ListOperationsViewController.swift */,
 			);
 			path = ViewController;
@@ -315,8 +324,9 @@
 		655D787F2CB3EACC00773C64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				655D78A62CB3F57F00773C64 /* UILabel+ExtractColor.swift */,
-				655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */,
+				655D78BD2CB40AD200773C64 /* UICollectionView */,
+				655D78BC2CB40AC800773C64 /* UIColor */,
+				655D78BB2CB40AC100773C64 /* UILabel */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -378,6 +388,7 @@
 				657A16322CB3A9BC00C6CF1F /* BaseTabBarController */,
 				657A16212CB2F4F200C6CF1F /* BaseViewController */,
 				655D78AC2CB3FC5000773C64 /* BaseCollectionReusableView */,
+				655D78BE2CB40B0300773C64 /* BaseCollectionViewCell */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -398,6 +409,61 @@
 				655D78A92CB3FC3700773C64 /* LargeHeaderReusableView.swift */,
 			);
 			path = LargeHeaderReusableView;
+			sourceTree = "<group>";
+		};
+		655D78B42CB4085600773C64 /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				655D78B52CB4086D00773C64 /* CollectionViewContaining.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
+		655D78B72CB40A5D00773C64 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		655D78BB2CB40AC100773C64 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				655D78A62CB3F57F00773C64 /* UILabel+ExtractColor.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		655D78BC2CB40AC800773C64 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		655D78BD2CB40AD200773C64 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				655D78B92CB40ABE00773C64 /* UICollectionView+Register.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		655D78BE2CB40B0300773C64 /* BaseCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				655D78BF2CB40B1100773C64 /* BaseCollectionViewCell.swift */,
+			);
+			path = BaseCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		655D78C12CB40B4300773C64 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				655D78C22CB40B5800773C64 /* ReusableView.swift */,
+			);
+			path = ReusableView;
 			sourceTree = "<group>";
 		};
 		657A15F92CB27C7C00C6CF1F = {
@@ -473,6 +539,7 @@
 			children = (
 				657A16262CB2F79300C6CF1F /* DI */,
 				657A16202CB2F4EC00C6CF1F /* UI */,
+				655D78B42CB4085600773C64 /* Typealias */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -501,6 +568,7 @@
 			children = (
 				655D78AB2CB3FC4600773C64 /* Base */,
 				655D78A82CB3FC0800773C64 /* UICollectionReusableView */,
+				655D78C12CB40B4300773C64 /* ReusableView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -663,7 +731,9 @@
 				655D78AA2CB3FC3700773C64 /* LargeHeaderReusableView.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
+				655D78B62CB4086D00773C64 /* CollectionViewContaining.swift in Sources */,
 				655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */,
+				655D78C32CB40B5800773C64 /* ReusableView.swift in Sources */,
 				655D78AE2CB3FC5A00773C64 /* BaseCollectionReusableView.swift in Sources */,
 				655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */,
 				655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */,
@@ -672,10 +742,12 @@
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
+				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
 				655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */,
+				655D78C02CB40B1100773C64 /* BaseCollectionViewCell.swift in Sources */,
 				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,

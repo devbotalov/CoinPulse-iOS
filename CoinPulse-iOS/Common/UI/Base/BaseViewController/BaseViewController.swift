@@ -20,11 +20,14 @@ class BaseViewController<Router>: UIViewController {
         view.backgroundColor = UIColor(resource: .primaryBackground)
         
         setupNavigationBar()
+        setupCollectionView()
         setupSubviews()
         setupConstraints()
     }
     
     func setupNavigationBar() {}
+    
+    func setupCollectionView() {}
     
     func setupSubviews() {}
     

@@ -12,7 +12,7 @@ struct ListOperations: ModuleProtocol {
     
     typealias DataStore = ListOperationsDataStore
     
-    typealias DisplayLogic = BaseViewController<Router> & ListOperationsDisplayLogic
+    typealias DisplayLogic = BaseViewController<Router> & ListOperationsDisplayLogic & CollectionViewContaining
     typealias PresentationLogic = ListOperationsPresentationLogic
     typealias BusinessLogic = ListOperationsBusinessLogic & DataStore
     typealias RoutingLogic = ListOperationsRoutingLogic & ListOperationsDataPassing & NSObject
