@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LargeHeaderReusableViewProtocol {
-    func configureView(with title: String)
+    func configureView(with title: String, delegate: LargeHeaderReusableViewDelegate?)
 }

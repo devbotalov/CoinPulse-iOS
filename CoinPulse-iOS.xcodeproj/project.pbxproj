@@ -41,6 +41,7 @@
 		655D78AA2CB3FC3700773C64 /* LargeHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78A92CB3FC3700773C64 /* LargeHeaderReusableView.swift */; };
 		655D78AE2CB3FC5A00773C64 /* BaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78AD2CB3FC5A00773C64 /* BaseCollectionReusableView.swift */; };
 		655D78B12CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B02CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift */; };
+		655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78B22CB4060A00773C64 /* LargeHeaderReusableViewDelegate.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		655D78A92CB3FC3700773C64 /* LargeHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHeaderReusableView.swift; sourceTree = "<group>"; };
 		655D78AD2CB3FC5A00773C64 /* BaseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		655D78B02CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHeaderReusableViewProtocol.swift; sourceTree = "<group>"; };
+		655D78B22CB4060A00773C64 /* LargeHeaderReusableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHeaderReusableViewDelegate.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				655D78B02CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift */,
+				655D78B22CB4060A00773C64 /* LargeHeaderReusableViewDelegate.swift */,
 				655D78A92CB3FC3700773C64 /* LargeHeaderReusableView.swift */,
 			);
 			path = LargeHeaderReusableView;
@@ -660,6 +663,7 @@
 				655D78AA2CB3FC3700773C64 /* LargeHeaderReusableView.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
+				655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */,
 				655D78AE2CB3FC5A00773C64 /* BaseCollectionReusableView.swift in Sources */,
 				655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */,
 				655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */,
