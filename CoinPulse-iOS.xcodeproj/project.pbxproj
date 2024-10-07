@@ -36,6 +36,7 @@
 		655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */; };
 		655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */; };
 		655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */; };
+		655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78A12CB3F1FB00773C64 /* Injected.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		655D78982CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		655D78992CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		655D78A12CB3F1FB00773C64 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -343,6 +345,14 @@
 			path = OperationEntity;
 			sourceTree = "<group>";
 		};
+		655D78A02CB3F1EF00773C64 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				655D78A12CB3F1FB00773C64 /* Injected.swift */,
+			);
+			path = Injected;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +469,7 @@
 		657A16262CB2F79300C6CF1F /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				655D78A02CB3F1EF00773C64 /* Injected */,
 				657A16272CB2F83700C6CF1F /* ServiceLocator */,
 				657A162F2CB2F92D00C6CF1F /* Module */,
 				657A162C2CB2F8A200C6CF1F /* Configurator */,
@@ -597,6 +608,7 @@
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
+				655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,

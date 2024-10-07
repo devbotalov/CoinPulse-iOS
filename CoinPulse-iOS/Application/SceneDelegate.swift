@@ -56,7 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 private extension SceneDelegate {
     private func setupLocator() {
-        serviceLocator = ServiceLocator()
+        serviceLocator = ServiceLocator.shared
         registerDependencies(in: serviceLocator)
     }
     

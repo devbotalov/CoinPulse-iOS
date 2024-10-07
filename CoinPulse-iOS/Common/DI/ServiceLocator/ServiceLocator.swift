@@ -8,7 +8,12 @@
 import Foundation
 
 final class ServiceLocator: ServiceLocatorProtocol {
+    
+    static let shared: ServiceLocatorProtocol = ServiceLocator()
+    
     private var services: [String: Any] = [:]
+    
+    private init() {}
     
     func register<T>(service: T, completion: ((T) -> Void)? = nil) {
         let key = String(describing: T.self)
