@@ -17,7 +17,8 @@ class BaseViewController<Router>: UIViewController {
     }
     
     func setupViewController() {
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(resource: .primaryBackground)
+        
         setupNavigationBar()
         setupSubviews()
         setupConstraints()

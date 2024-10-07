@@ -28,13 +28,18 @@ final class BaseTabBarController: UITabBarController {
 
 private extension BaseTabBarController {
     func setupTabBarController(serviceLocator: ServiceLocatorProtocol?) {
+        UITabBar.appearance().tintColor = UIColor(resource: .accentBlue)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(resource: .accentGray)
+        
+        tabBar.isTranslucent = true
+        
         var viewControllers: [UIViewController] = []
         
         if let addViewController = serviceLocator?.resolve() as AddOperation.ViewController? {
             let addScene = setupNavigationController(
                 tabBarItem: TabBarItem(
-                    navigationBarTitle: "Navigation Add",
-                    tabBarTitle: "TabBar Add",
+                    navigationBarTitle: "Add a new operation",
+                    tabBarTitle: "Add",
                     tabBarImage: UIImage(systemName: "plus"),
                     rootViewController: addViewController
                 )

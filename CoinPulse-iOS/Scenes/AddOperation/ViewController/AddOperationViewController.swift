@@ -8,6 +8,5 @@
 import UIKit
 
 final class AddOperationViewController: AddOperation.DisplayLogic {
-    
     var interactor: AddOperation.BusinessLogic?
 }
