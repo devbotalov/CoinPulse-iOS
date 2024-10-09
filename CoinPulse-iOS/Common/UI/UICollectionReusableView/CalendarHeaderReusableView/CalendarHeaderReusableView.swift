@@ -21,7 +21,7 @@ final class CalendarHeaderReusableView: BaseCollectionReusableView {
     
     private let leftActionButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setImage(UIImage(resource: .leftArrow), for: .normal)
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor(resource: .accentGray)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,7 @@ final class CalendarHeaderReusableView: BaseCollectionReusableView {
     
     private let rightActionButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        button.setImage(UIImage(resource: .rightArrow), for: .normal)
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor(resource: .accentGray)
         button.translatesAutoresizingMaskIntoConstraints = false

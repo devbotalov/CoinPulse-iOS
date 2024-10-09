@@ -21,7 +21,7 @@ final class AllOperationsFooterReusableView: BaseCollectionReusableView {
     
     private let arrowImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "chevron.down")
+        imageView.image = UIImage(resource: .downArrow)
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor(resource: .accentGray)
         imageView.translatesAutoresizingMaskIntoConstraints = false

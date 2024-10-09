@@ -51,7 +51,7 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
     
     private let arrowImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.image = UIImage(resource: .rightArrow)
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor(resource: .accentGray)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -132,7 +132,7 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
             rightStackView.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -10),
             rightStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             arrowImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             arrowImageView.widthAnchor.constraint(equalToConstant: 24),
             arrowImageView.heightAnchor.constraint(equalToConstant: 24)

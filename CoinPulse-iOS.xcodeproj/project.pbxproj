@@ -520,8 +520,8 @@
 			isa = PBXGroup;
 			children = (
 				6564E8F62CB65C1600262A90 /* ListOperationsCalendarDayCell */,
-				6564E8F42CB65BD000262A90 /* ListOperationsCategoryCell */,
 				6564E9162CB689E800262A90 /* ListOperationsOperationCell */,
+				6564E8F42CB65BD000262A90 /* ListOperationsCategoryCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
