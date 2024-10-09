@@ -11,9 +11,13 @@ final class ListOperationsCalendarDayCellLayout {
     
     private init() {}
     
-    static func layout() -> NSCollectionLayoutSection {
+    static func layout(countDay: Int, width: CGFloat) -> NSCollectionLayoutSection {
+        let widthWidthSpace = CGFloat(10 * (countDay - 1))
+        let widthWithInsets: CGFloat = 72
+        let widthSize = (width - widthWidthSpace  - widthWithInsets) / CGFloat(countDay)
+        
         let sizeItem = NSCollectionLayoutSize(
-            widthDimension: .absolute(44),
+            widthDimension: .absolute(CGFloat(widthSize)),
             heightDimension: .absolute(76)
         )
         

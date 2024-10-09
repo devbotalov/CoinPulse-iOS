@@ -135,7 +135,9 @@ private extension ListOperations.ViewController {
         return UICollectionViewCompositionalLayout { [weak self] section, _ in
             switch self?.sections.getSection(by: section) ?? .unknown {
                 case .calendar:
-                    ListOperationsCalendarDayCellLayout.layout()
+                    ListOperationsCalendarDayCellLayout.layout(
+                        countDay: 7, width: self?.collectionView.frame.width ?? 0
+                    )
                 case .categories:
                     ListOperationsCategoryCellLayout.layout()
                 default:
