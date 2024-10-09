@@ -9,6 +9,6 @@ import Foundation
 import CoreData
 
 protocol CoreDataManagerProtocol {
-    func fetchCategories() throws -> [CategoryEntity]
-    func fetchOperations() throws -> [OperationEntity]
+    func fetchOperations(with predicate: NSPredicate?) throws -> [OperationEntity]
+    func fetchCategories(with predicate: NSPredicate?) throws -> [CategoryEntity]
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListOperationsOperationCellProtocol {
-    func configureCell(with title: String)
+    func configureCell(with operation: OperationEntity?)
 }
