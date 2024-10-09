@@ -64,6 +64,13 @@
 		6564E90F2CB6739200262A90 /* UIColor+BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E90E2CB6739200262A90 /* UIColor+BorderColor.swift */; };
 		6564E9122CB6872700262A90 /* TopRoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9112CB6872700262A90 /* TopRoundedBackgroundView.swift */; };
 		6564E9152CB6880C00262A90 /* BottomRoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9142CB6880C00262A90 /* BottomRoundedBackgroundView.swift */; };
+		6564E9182CB689FA00262A90 /* ListOperationsOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9172CB689F900262A90 /* ListOperationsOperationCell.swift */; };
+		6564E91A2CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9192CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift */; };
+		6564E91C2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E91B2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift */; };
+		6564E91F2CB6995700262A90 /* AllOperationsFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E91E2CB6995700262A90 /* AllOperationsFooterReusableView.swift */; };
+		6564E9212CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9202CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift */; };
+		6564E9232CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9222CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift */; };
+		6564E9262CB69EF800262A90 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9252CB69EF800262A90 /* UIView+ShakeAnimation.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -136,6 +143,13 @@
 		6564E90E2CB6739200262A90 /* UIColor+BorderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+BorderColor.swift"; sourceTree = "<group>"; };
 		6564E9112CB6872700262A90 /* TopRoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedBackgroundView.swift; sourceTree = "<group>"; };
 		6564E9142CB6880C00262A90 /* BottomRoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedBackgroundView.swift; sourceTree = "<group>"; };
+		6564E9172CB689F900262A90 /* ListOperationsOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsOperationCell.swift; sourceTree = "<group>"; };
+		6564E9192CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsOperationCellProtocol.swift; sourceTree = "<group>"; };
+		6564E91B2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOperationsOperationCellLayout.swift; sourceTree = "<group>"; };
+		6564E91E2CB6995700262A90 /* AllOperationsFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOperationsFooterReusableView.swift; sourceTree = "<group>"; };
+		6564E9202CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOperationsFooterReusableViewDelegate.swift; sourceTree = "<group>"; };
+		6564E9222CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOperationsFooterReusableViewProtocol.swift; sourceTree = "<group>"; };
+		6564E9252CB69EF800262A90 /* UIView+ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShakeAnimation.swift"; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +180,7 @@
 		651B2B712CB463F800D8EAF1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				6564E9242CB69EE600262A90 /* Animation */,
 				651B2B722CB4640100D8EAF1 /* UIView+CornerRadius.swift */,
 				6564E90E2CB6739200262A90 /* UIColor+BorderColor.swift */,
 			);
@@ -458,6 +473,7 @@
 			children = (
 				655D78AF2CB3FD0700773C64 /* LargeHeaderReusableView */,
 				6564E9072CB66AB700262A90 /* CalendarHeaderReusableView */,
+				6564E91D2CB6992100262A90 /* AllOperationsFooterReusableView */,
 			);
 			path = UICollectionReusableView;
 			sourceTree = "<group>";
@@ -505,6 +521,7 @@
 			children = (
 				6564E8F62CB65C1600262A90 /* ListOperationsCalendarDayCell */,
 				6564E8F42CB65BD000262A90 /* ListOperationsCategoryCell */,
+				6564E9162CB689E800262A90 /* ListOperationsOperationCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -612,6 +629,34 @@
 				6564E9142CB6880C00262A90 /* BottomRoundedBackgroundView.swift */,
 			);
 			path = BottomRoundedBackgroundView;
+			sourceTree = "<group>";
+		};
+		6564E9162CB689E800262A90 /* ListOperationsOperationCell */ = {
+			isa = PBXGroup;
+			children = (
+				6564E9192CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift */,
+				6564E91B2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift */,
+				6564E9172CB689F900262A90 /* ListOperationsOperationCell.swift */,
+			);
+			path = ListOperationsOperationCell;
+			sourceTree = "<group>";
+		};
+		6564E91D2CB6992100262A90 /* AllOperationsFooterReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				6564E9222CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift */,
+				6564E9202CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift */,
+				6564E91E2CB6995700262A90 /* AllOperationsFooterReusableView.swift */,
+			);
+			path = AllOperationsFooterReusableView;
+			sourceTree = "<group>";
+		};
+		6564E9242CB69EE600262A90 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				6564E9252CB69EF800262A90 /* UIView+ShakeAnimation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		657A15F92CB27C7C00C6CF1F = {
@@ -870,6 +915,7 @@
 				6564E9122CB6872700262A90 /* TopRoundedBackgroundView.swift in Sources */,
 				655D78CE2CB41EE200773C64 /* ListOperationsCategoryCellProtocol.swift in Sources */,
 				655D78B12CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift in Sources */,
+				6564E9182CB689FA00262A90 /* ListOperationsOperationCell.swift in Sources */,
 				655D78C82CB41B7300773C64 /* DynamicSections.swift in Sources */,
 				655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */,
 				6564E9092CB66ACB00262A90 /* CalendarHeaderReusableViewProtocol.swift in Sources */,
@@ -890,10 +936,13 @@
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
 				6564E8F82CB65C3000262A90 /* ListOperationsCalendarDayCell.swift in Sources */,
 				655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */,
+				6564E91A2CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift in Sources */,
+				6564E9232CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				655D78AA2CB3FC3700773C64 /* LargeHeaderReusableView.swift in Sources */,
 				657A16252CB2F64F00C6CF1F /* BaseViewController.swift in Sources */,
+				6564E91F2CB6995700262A90 /* AllOperationsFooterReusableView.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
 				655D78B62CB4086D00773C64 /* CollectionViewContaining.swift in Sources */,
 				655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */,
@@ -902,9 +951,12 @@
 				655D78AE2CB3FC5A00773C64 /* BaseCollectionReusableView.swift in Sources */,
 				655D78472CB3D33900773C64 /* ListOperationsRouter.swift in Sources */,
 				655D78642CB3D76700773C64 /* ProfileConfigurator.swift in Sources */,
+				6564E9262CB69EF800262A90 /* UIView+ShakeAnimation.swift in Sources */,
+				6564E9212CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift in Sources */,
 				655D78412CB3D32500773C64 /* ListOperationsViewController.swift in Sources */,
 				655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
+				6564E91C2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift in Sources */,
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,

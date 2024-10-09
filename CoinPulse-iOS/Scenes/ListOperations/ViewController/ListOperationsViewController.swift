@@ -25,6 +25,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         super.setupCollectionView()
         collectionView.collectionViewLayout = setupCollectionViewLayout()
         collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -32,10 +33,13 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     override func setupReusableView() {
         super.setupReusableView()
         collectionView.registerCell(ListOperationsCalendarDayCell.self)
+        collectionView.registerCell(ListOperationsOperationCell.self)
         collectionView.registerCell(ListOperationsCategoryCell.self)
         
         collectionView.registerHeader(LargeHeaderReusableView.self)
         collectionView.registerHeader(CalendarHeaderReusableView.self)
+        
+        collectionView.registerFooter(AllOperationsFooterReusableView.self)
         
         collectionView.registerBackground(
             TopRoundedBackgroundView.self,
@@ -58,6 +62,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         
         // FIXME: Править
         sections.appendSection(.calendar)
+        sections.appendSection(.operations)
         sections.appendSection(.categories)
         
         dataSource = UICollectionViewDiffableDataSource<ListOperations.Sections, Int>(collectionView: collectionView) { [weak self] collectionView, indexPath, _ in
@@ -69,6 +74,13 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         dayMonth: "12",
                         isCurrent: indexPath.item == 1,
                         isSelected: indexPath.item == 3
+                    )
+                    return cell
+                    
+                case .operations:
+                    let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsOperationCell
+                    cell.configureCell(
+                        with: ""
                     )
                     return cell
                     
@@ -92,6 +104,15 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         )
                         return header
                         
+                    case .operations:
+                        let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
+                        header.configureView(
+                            with: "All operations", 
+                            titleButton: nil,
+                            delegate: self
+                        )
+                        return header
+                        
                     case .categories:
                         let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
                         header.configureView(
@@ -101,6 +122,15 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         )
                         return header
                         
+                    default:
+                        return BaseCollectionReusableView()
+                }
+            } else {
+                switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
+                    case .operations:
+                        let footer = collectionView.dequeueFooter(for: indexPath) as AllOperationsFooterReusableView
+                        footer.configureView(isCollapsed: true, delegate: self)
+                        return footer
                     default:
                         return BaseCollectionReusableView()
                 }
@@ -115,10 +145,12 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         
         snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, Int>()
         snapshot.appendSections([.calendar])
+        snapshot.appendSections([.operations])
         snapshot.appendSections([.categories])
         
         snapshot.appendItems([1, 2, 3, 4, 5, 6, 7], toSection: .calendar)
-        snapshot.appendItems([8, 9, 10, 11], toSection: .categories)
+        snapshot.appendItems([8, 9, 10, 11], toSection: .operations)
+        snapshot.appendItems([12, 13, 14, 15], toSection: .categories)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
@@ -148,6 +180,11 @@ private extension ListOperations.ViewController {
                     ListOperationsCalendarDayCellLayout.layout(
                         countDay: 7, width: self?.collectionView.frame.width ?? 0
                     )
+                    
+                case .operations:
+                    ListOperationsOperationCellLayout.layout(
+                        width: self?.collectionView.frame.width ?? 0
+                    )
                 case .categories:
                     ListOperationsCategoryCellLayout.layout()
                 default:
@@ -165,6 +202,12 @@ extension ListOperations.ViewController: LargeHeaderReusableViewDelegate {
 
 extension ListOperations.ViewController: CalendarHeaderReusableViewDelegate {
     func actionButtonDidTapped(_ sender: UIButton) {
+        // Tap
+    }
+}
+
+extension ListOperations.ViewController: AllOperationsFooterReusableViewDelegate {
+    func viewDidTapped() {
         // Tap
     }
 }

@@ -39,6 +39,7 @@ extension ListOperations {
     
     enum Sections: Hashable {
         case calendar
+        case operations
         case categories
         case unknown
     }
