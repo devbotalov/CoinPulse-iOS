@@ -19,7 +19,7 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
         return label
     }()
     
-    private let descriptionLabel: UILabel = {
+    private let noteLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(resource: .secondaryText)
         label.textAlignment = .left
@@ -75,7 +75,7 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
         addSubview(categoryEmojiView)
         addSubview(categoryTitleLabel)
         
-        addSubview(descriptionLabel)
+        addSubview(noteLabel)
         addSubview(amountAndAccountStackView)
         
         amountAndAccountStackView.addArrangedSubview(amountLabel)
@@ -95,11 +95,11 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
             categoryTitleLabel.leadingAnchor.constraint(equalTo: categoryEmojiView.trailingAnchor, constant: 10),
             categoryTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            descriptionLabel.topAnchor.constraint(equalTo: categoryTitleLabel.bottomAnchor, constant: 4),
-            descriptionLabel.leadingAnchor.constraint(equalTo: categoryTitleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: categoryTitleLabel.trailingAnchor),
+            noteLabel.topAnchor.constraint(equalTo: categoryTitleLabel.bottomAnchor, constant: 4),
+            noteLabel.leadingAnchor.constraint(equalTo: categoryTitleLabel.leadingAnchor),
+            noteLabel.trailingAnchor.constraint(equalTo: categoryTitleLabel.trailingAnchor),
             
-            amountAndAccountStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4),
+            amountAndAccountStackView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 4),
             amountAndAccountStackView.leadingAnchor.constraint(equalTo: categoryTitleLabel.leadingAnchor),
             amountAndAccountStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10),
             amountAndAccountStackView.trailingAnchor.constraint(equalTo: categoryTitleLabel.trailingAnchor),
@@ -108,14 +108,23 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
 }
 
 extension ListOperationsOperationCell: ListOperationsOperationCellProtocol {
-    func configureCell(with title: String) {
-        categoryTitleLabel.text = "Home"
-        descriptionLabel.text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
-        amountLabel.text = "2000₽"
+    func configureCell(with operation: OperationEntity?) {
+        guard let operation else { return }
+        
+        categoryTitleLabel.text = operation.category.title
+        noteLabel.text = operation.note
+        
+        // FIXME: Fix to currency
+        amountLabel.text = operation.amount.description
+        
+        // FIXME: Fix to account
         accountLabel.text = "Cash"
         
-        categoryEmojiView.configureView(with: "🐥", color: UIColor(resource: .accentYellow))
+        categoryEmojiView.configureView(
+            with: operation.category.emoji,
+            color: UIColor(hex: operation.category.color)
+        )
         
-        backgroundColor = UIColor(resource: .accentYellow).withAlphaComponent(0.1)
+        backgroundColor = UIColor(hex: operation.category.color).withAlphaComponent(0.2)
     }
 }

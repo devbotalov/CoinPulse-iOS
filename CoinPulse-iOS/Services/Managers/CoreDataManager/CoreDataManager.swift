@@ -22,15 +22,17 @@ final class CoreDataManager: CoreDataManagerProtocol {
 }
 
 extension CoreDataManager {
-    func fetchCategories() throws -> [CategoryEntity] {
+    func fetchOperations(with predicate: NSPredicate?) throws -> [OperationEntity] {
         guard let context else { return [] }
-        let fetchRequest = CategoryEntity.fetchRequest()
+        let fetchRequest = OperationEntity.fetchRequest()
+        fetchRequest.predicate = predicate
         return try context.fetch(fetchRequest)
     }
     
-    func fetchOperations() throws -> [OperationEntity] {
+    func fetchCategories(with predicate: NSPredicate?) throws -> [CategoryEntity] {
         guard let context else { return [] }
-        let fetchRequest = OperationEntity.fetchRequest()
+        let fetchRequest = CategoryEntity.fetchRequest()
+        fetchRequest.predicate = predicate
         return try context.fetch(fetchRequest)
     }
 }

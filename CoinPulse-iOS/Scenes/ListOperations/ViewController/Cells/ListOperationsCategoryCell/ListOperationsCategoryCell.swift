@@ -141,12 +141,27 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
 }
 
 extension ListOperationsCategoryCell: ListOperationsCategoryCellProtocol {
-    func configureCell(with title: String) {
-        titleLabel.text = title
-        countLabel.text = "10 транзакций"
-        amountLabel.text = "3000₽"
+    func configureCell(with category: CategoryEntity?) {
+        guard let category else { return }
+        
+        titleLabel.text = category.title
+        countLabel.text = "\(category.operations.count) operations"
+        
+        let setOperations = category.operations as? Set<OperationEntity> ?? []
+        let amount: Double = setOperations
+            .map({ $0.amount })
+            .reduce(0.0, +)
+        
+        // FIXME: Fix to currency
+        amountLabel.text = amount.description
+        
+        // FIXME: Fix percentage
         percentageLabel.text = "57%"
-        loadingView.backgroundColor = UIColor(resource: .accentGreen).withAlphaComponent(0.1)
-        categoryEmojiView.configureView(with: "🐸", color: UIColor(resource: .accentGreen))
+        
+        loadingView.backgroundColor = UIColor(hex: category.color).withAlphaComponent(0.2)
+        categoryEmojiView.configureView(
+            with: category.emoji,
+            color: UIColor(hex: category.color)
+        )
     }
 }

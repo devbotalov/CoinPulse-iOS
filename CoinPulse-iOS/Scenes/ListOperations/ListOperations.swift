@@ -23,15 +23,24 @@ struct ListOperations: ModuleProtocol {
     typealias Router = ListOperationsRouter
 }
 
-protocol ListOperationsDataStore {}
+protocol ListOperationsDataStore {
+    var operations: [OperationEntity] { get }
+    var categories: [CategoryEntity] { get }
+}
 
 protocol ListOperationsDataPassing {}
 
-protocol ListOperationsDisplayLogic {}
+protocol ListOperationsDisplayLogic {
+    func displayFetchedData(viewModel: ListOperations.FetchData.ViewModel)
+}
 
-protocol ListOperationsPresentationLogic {}
+protocol ListOperationsPresentationLogic {
+    func presentFetchedData(response: ListOperations.FetchData.Response)
+}
 
-protocol ListOperationsBusinessLogic {}
+protocol ListOperationsBusinessLogic {
+    func fetchData(request: ListOperations.FetchData.Request)
+}
 
 protocol ListOperationsRoutingLogic {}
 
@@ -42,5 +51,26 @@ extension ListOperations {
         case operations
         case categories
         case unknown
+    }
+}
+
+extension ListOperations {
+    enum FetchData {
+        struct Request: CoreDataRequestProtocol {
+            typealias Response = ([OperationEntity], [CategoryEntity])
+            
+            let operationsPredicate: NSPredicate?
+            let categoriesPredicate: NSPredicate?
+        }
+        
+        struct Response {
+            let operations: [OperationEntity]
+            let categories: [CategoryEntity]
+        }
+        
+        struct ViewModel {
+            let operations: [OperationEntity]
+            let categories: [CategoryEntity]
+        }
     }
 }

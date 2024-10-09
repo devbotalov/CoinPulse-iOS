@@ -16,11 +16,11 @@ extension CategoryEntity {
         return NSFetchRequest<CategoryEntity>(entityName: "CategoryEntity")
     }
 
-    @NSManaged public var color: String?
-    @NSManaged public var emoji: String?
-    @NSManaged public var title: String?
-    @NSManaged public var type: String?
-    @NSManaged public var operations: NSSet?
+    @NSManaged public var color: String
+    @NSManaged public var emoji: String
+    @NSManaged public var title: String
+    @NSManaged public var type: String
+    @NSManaged public var operations: NSSet
 
 }
 

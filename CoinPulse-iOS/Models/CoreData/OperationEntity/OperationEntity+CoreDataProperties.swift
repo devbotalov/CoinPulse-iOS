@@ -16,11 +16,12 @@ extension OperationEntity {
         return NSFetchRequest<OperationEntity>(entityName: "OperationEntity")
     }
 
-    @NSManaged public var amount: NSDecimalNumber?
-    @NSManaged public var date: Date?
-    @NSManaged public var id: UUID?
-    @NSManaged public var type: String?
-    @NSManaged public var category: CategoryEntity?
+    @NSManaged public var amount: Double
+    @NSManaged public var date: Date
+    @NSManaged public var id: UUID
+    @NSManaged public var note: String?
+    @NSManaged public var type: String
+    @NSManaged public var category: CategoryEntity
 
 }
 

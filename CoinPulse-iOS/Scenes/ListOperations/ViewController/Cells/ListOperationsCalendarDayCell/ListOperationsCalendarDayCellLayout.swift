@@ -11,7 +11,7 @@ final class ListOperationsCalendarDayCellLayout {
     
     private init() {}
     
-    static func layout(countDay: Int, width: CGFloat) -> NSCollectionLayoutSection {
+    static func layout(countDay: Int, width: CGFloat, operationsIsEmpty: Bool) -> NSCollectionLayoutSection {
         let widthWidthSpace = CGFloat(10 * (countDay - 1))
         let widthWithInsets: CGFloat = 72
         let widthSize = (width - widthWidthSpace  - widthWithInsets) / CGFloat(countDay)
@@ -50,7 +50,7 @@ final class ListOperationsCalendarDayCellLayout {
         )
         
         let background = NSCollectionLayoutDecorationItem.background(
-            elementKind: TopRoundedBackgroundView.kindView
+            elementKind: operationsIsEmpty ? RoundedBackgroundView.kindView : TopRoundedBackgroundView.kindView
         )
         
         background.contentInsets = NSDirectionalEdgeInsets(

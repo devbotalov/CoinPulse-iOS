@@ -16,10 +16,18 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     
     var interactor: ListOperations.BusinessLogic?
     
-    private var dataSource: UICollectionViewDiffableDataSource<ListOperations.Sections, Int>!
-    private var snapshot: NSDiffableDataSourceSnapshot<ListOperations.Sections, Int>!
+    private var dataSource: UICollectionViewDiffableDataSource<ListOperations.Sections, ModelForSection>!
+    private var snapshot: NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>!
     
     private var sections = DynamicSections<ListOperations.Sections>()
+    private var viewModel: ListOperations.FetchData.ViewModel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let categoriesPredicate = NSPredicate(format: "operations.@count > %d", 0)
+        fetchData(categoriesPredicate: categoriesPredicate)
+    }
     
     override func setupCollectionView() {
         super.setupCollectionView()
@@ -60,15 +68,12 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     override func setupDataSource() {
         super.setupDataSource()
         
-        // FIXME: Править
-        sections.appendSection(.calendar)
-        sections.appendSection(.operations)
-        sections.appendSection(.categories)
-        
-        dataSource = UICollectionViewDiffableDataSource<ListOperations.Sections, Int>(collectionView: collectionView) { [weak self] collectionView, indexPath, _ in
+        dataSource = UICollectionViewDiffableDataSource<ListOperations.Sections, ModelForSection>(collectionView: collectionView) { [weak self] collectionView, indexPath, _ in
             switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
                 case .calendar:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCalendarDayCell
+                    
+                    // FIXME: Fix configureCell
                     cell.configureCell(
                         shortDay: "S",
                         dayMonth: "12",
@@ -79,14 +84,12 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                     
                 case .operations:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsOperationCell
-                    cell.configureCell(
-                        with: ""
-                    )
+                    cell.configureCell(with: self?.viewModel?.operations[indexPath.item])
                     return cell
                     
                 case .categories:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCategoryCell
-                    cell.configureCell(with: "Hello")
+                    cell.configureCell(with: self?.viewModel?.categories[indexPath.item])
                     return cell
                 case .unknown:
                     return BaseCollectionViewCell()
@@ -98,6 +101,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                 switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
                     case .calendar:
                         let header = collectionView.dequeueHeader(for: indexPath) as CalendarHeaderReusableView
+                        
+                        // FIXME: Fix configureView
                         header.configureView(
                             with: "Hello",
                             delegate: self
@@ -138,21 +143,6 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         }
     }
     
-    override func setupInitialSnapshot() {
-        super.setupInitialSnapshot()
-        
-        snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, Int>()
-        snapshot.appendSections([.calendar])
-        snapshot.appendSections([.operations])
-        snapshot.appendSections([.categories])
-        
-        snapshot.appendItems([1, 2, 3, 4, 5, 6, 7], toSection: .calendar)
-        snapshot.appendItems([8, 9, 10, 11], toSection: .operations)
-        snapshot.appendItems([12, 13, 14, 15], toSection: .categories)
-        
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-    
     override func setupSubviews() {
         super.setupSubviews()
         view.addSubview(collectionView)
@@ -168,6 +158,13 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
     }
+    
+    func displayFetchedData(viewModel: ListOperations.FetchData.ViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel = viewModel
+            self?.updateSnapshot(viewModel: viewModel)
+        }
+    }
 }
 
 private extension ListOperations.ViewController {
@@ -176,7 +173,9 @@ private extension ListOperations.ViewController {
             switch self?.sections.getSection(by: section) ?? .unknown {
                 case .calendar:
                     ListOperationsCalendarDayCellLayout.layout(
-                        countDay: 7, width: self?.collectionView.frame.width ?? 0
+                        countDay: 7,
+                        width: self?.collectionView.frame.width ?? 0,
+                        operationsIsEmpty: (self?.viewModel?.operations ?? []).isEmpty
                     )
                     
                 case .operations:
@@ -189,6 +188,42 @@ private extension ListOperations.ViewController {
                     ListOperationsCategoryCellLayout.layout()
             }
         }
+    }
+    
+    func fetchData(operationsPredicate: NSPredicate? = nil, categoriesPredicate: NSPredicate? = nil) {
+        let request = ListOperations.FetchData.Request(
+            operationsPredicate: operationsPredicate,
+            categoriesPredicate: categoriesPredicate
+        )
+        
+        interactor?.fetchData(request: request)
+    }
+    
+    func updateSnapshot(viewModel: ListOperations.FetchData.ViewModel) {
+        snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>()
+        
+        sections.appendSection(.calendar)
+        snapshot.appendSections([.calendar])
+        
+        // FIXME: Fix days
+        let days = [1, 2, 3, 4, 5, 6, 7].map { ModelForSection.calendar($0) }
+        snapshot.appendItems(days, toSection: .calendar)
+        
+        if !viewModel.operations.isEmpty {
+            sections.appendSection(.operations)
+            snapshot.appendSections([.operations])
+            let operations = viewModel.operations.map { ModelForSection.operations($0) }
+            snapshot.appendItems(operations, toSection: .operations)
+        }
+        
+        if !viewModel.categories.isEmpty {
+            sections.appendSection(.categories)
+            snapshot.appendSections([.categories])
+            let categories = viewModel.categories.map { ModelForSection.categories($0) }
+            snapshot.appendItems(categories, toSection: .categories)
+        }
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
