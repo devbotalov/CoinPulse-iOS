@@ -31,9 +31,11 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     
     override func setupReusableView() {
         super.setupReusableView()
+        collectionView.registerCell(ListOperationsCalendarDayCell.self)
         collectionView.registerCell(ListOperationsCategoryCell.self)
         
         collectionView.registerHeader(LargeHeaderReusableView.self)
+        collectionView.registerHeader(CalendarHeaderReusableView.self)
         
         collectionView.registerBackground(
             RoundedBackgroundView.self,
@@ -45,10 +47,21 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         super.setupDataSource()
         
         // FIXME: Править
+        sections.appendSection(.calendar)
         sections.appendSection(.categories)
         
         dataSource = UICollectionViewDiffableDataSource<ListOperations.Sections, Int>(collectionView: collectionView) { [weak self] collectionView, indexPath, _ in
             switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
+                case .calendar:
+                    let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCalendarDayCell
+                    cell.configureCell(
+                        shortDay: "S",
+                        dayMonth: "12",
+                        isCurrent: indexPath.item == 1,
+                        isSelected: indexPath.item == 3
+                    )
+                    return cell
+                    
                 case .categories:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCategoryCell
                     cell.configureCell(with: "Hello")
@@ -61,6 +74,14 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
             if kind == UICollectionView.elementKindSectionHeader {
                 switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
+                    case .calendar:
+                        let header = collectionView.dequeueHeader(for: indexPath) as CalendarHeaderReusableView
+                        header.configureView(
+                            with: "Hello",
+                            delegate: self
+                        )
+                        return header
+                        
                     case .categories:
                         let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
                         header.configureView(
@@ -70,7 +91,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         )
                         return header
                         
-                    case .unknown:
+                    default:
                         return BaseCollectionReusableView()
                 }
             }
@@ -83,8 +104,11 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         super.setupInitialSnapshot()
         
         snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, Int>()
+        snapshot.appendSections([.calendar])
         snapshot.appendSections([.categories])
-        snapshot.appendItems([1, 2, 3, 4], toSection: .categories)
+        
+        snapshot.appendItems([1, 2, 3, 4, 5, 6, 7], toSection: .calendar)
+        snapshot.appendItems([8, 9, 10, 11], toSection: .categories)
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
@@ -110,9 +134,11 @@ private extension ListOperations.ViewController {
     func setupCollectionViewLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { [weak self] section, _ in
             switch self?.sections.getSection(by: section) ?? .unknown {
+                case .calendar:
+                    ListOperationsCalendarDayCellLayout.layout()
                 case .categories:
                     ListOperationsCategoryCellLayout.layout()
-                case .unknown:
+                default:
                     ListOperationsCategoryCellLayout.layout()
             }
         }
@@ -121,6 +147,12 @@ private extension ListOperations.ViewController {
 
 extension ListOperations.ViewController: LargeHeaderReusableViewDelegate {
     func actionButtonDidTapped() {
+        // Tap
+    }
+}
+
+extension ListOperations.ViewController: CalendarHeaderReusableViewDelegate {
+    func actionButtonDidTapped(_ sender: UIButton) {
         // Tap
     }
 }

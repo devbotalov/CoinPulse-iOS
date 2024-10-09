@@ -38,6 +38,7 @@ protocol ListOperationsRoutingLogic {}
 extension ListOperations {
     
     enum Sections: Hashable {
+        case calendar
         case categories
         case unknown
     }
