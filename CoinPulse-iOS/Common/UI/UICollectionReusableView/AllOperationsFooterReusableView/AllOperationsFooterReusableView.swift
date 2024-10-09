@@ -67,7 +67,7 @@ extension AllOperationsFooterReusableView: AllOperationsFooterReusableViewProtoc
     func configureView(isCollapsed: Bool, delegate: AllOperationsFooterReusableViewDelegate?) {
         self.delegate = delegate
         
-        titleLabel.text = isCollapsed ? "Show all" : "Collapse"
+        titleLabel.text = isCollapsed ? "View more" : "View less"
         arrowImageView.shakeAnimation()
     }
 }

@@ -108,7 +108,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
                         header.configureView(
                             with: "All operations", 
-                            titleButton: nil,
+                            titleButton: "View all",
                             delegate: self
                         )
                         return header
@@ -135,8 +135,6 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         return BaseCollectionReusableView()
                 }
             }
-            
-            return BaseCollectionReusableView()
         }
     }
     
