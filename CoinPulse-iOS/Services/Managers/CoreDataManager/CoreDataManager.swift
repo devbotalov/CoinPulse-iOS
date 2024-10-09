@@ -21,7 +21,19 @@ final class CoreDataManager: CoreDataManagerProtocol {
     }
 }
 
-extension CoreDataManager {}
+extension CoreDataManager {
+    func fetchCategories() throws -> [CategoryEntity] {
+        guard let context else { return [] }
+        let fetchRequest = CategoryEntity.fetchRequest()
+        return try context.fetch(fetchRequest)
+    }
+    
+    func fetchOperations() throws -> [OperationEntity] {
+        guard let context else { return [] }
+        let fetchRequest = OperationEntity.fetchRequest()
+        return try context.fetch(fetchRequest)
+    }
+}
 
 private extension CoreDataManager {
     func setupPersistentContainer() {
