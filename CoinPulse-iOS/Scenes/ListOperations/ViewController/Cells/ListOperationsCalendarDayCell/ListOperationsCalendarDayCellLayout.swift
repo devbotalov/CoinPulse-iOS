@@ -50,7 +50,7 @@ final class ListOperationsCalendarDayCellLayout {
         )
         
         let background = NSCollectionLayoutDecorationItem.background(
-            elementKind: RoundedBackgroundView.kindView
+            elementKind: TopRoundedBackgroundView.kindView
         )
         
         background.contentInsets = NSDirectionalEdgeInsets(

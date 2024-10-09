@@ -38,6 +38,16 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         collectionView.registerHeader(CalendarHeaderReusableView.self)
         
         collectionView.registerBackground(
+            TopRoundedBackgroundView.self,
+            forDecorationViewOfKind: TopRoundedBackgroundView.kindView
+        )
+        
+        collectionView.registerBackground(
+            BottomRoundedBackgroundView.self,
+            forDecorationViewOfKind: BottomRoundedBackgroundView.kindView
+        )
+        
+        collectionView.registerBackground(
             RoundedBackgroundView.self,
             forDecorationViewOfKind: RoundedBackgroundView.kindView
         )
