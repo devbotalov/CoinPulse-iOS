@@ -8,4 +8,7 @@
 import Foundation
 import CoreData
 
-protocol CoreDataManagerProtocol {}
+protocol CoreDataManagerProtocol {
+    func fetchCategories() throws -> [CategoryEntity]
+    func fetchOperations() throws -> [OperationEntity]
+}

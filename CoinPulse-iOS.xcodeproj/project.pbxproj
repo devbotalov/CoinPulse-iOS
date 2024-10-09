@@ -71,6 +71,11 @@
 		6564E9212CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9202CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift */; };
 		6564E9232CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9222CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift */; };
 		6564E9262CB69EF800262A90 /* UIView+ShakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9252CB69EF800262A90 /* UIView+ShakeAnimation.swift */; };
+		6564E9282CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9272CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift */; };
+		6564E92A2CB6AD6F00262A90 /* UIColor+ToHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9292CB6AD6F00262A90 /* UIColor+ToHex.swift */; };
+		6564E92C2CB6ADE500262A90 /* String+EmojiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E92B2CB6ADE500262A90 /* String+EmojiColor.swift */; };
+		6564E92F2CB6AE1E00262A90 /* UIImage+AverageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E92E2CB6AE1E00262A90 /* UIImage+AverageColor.swift */; };
+		6564E9322CB6AEC300262A90 /* OperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6564E9312CB6AEC300262A90 /* OperationType.swift */; };
 		657A16062CB27C7C00C6CF1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16052CB27C7C00C6CF1F /* AppDelegate.swift */; };
 		657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */; };
 		657A160F2CB27C7D00C6CF1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657A160E2CB27C7D00C6CF1F /* Assets.xcassets */; };
@@ -150,6 +155,11 @@
 		6564E9202CB6996000262A90 /* AllOperationsFooterReusableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOperationsFooterReusableViewDelegate.swift; sourceTree = "<group>"; };
 		6564E9222CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOperationsFooterReusableViewProtocol.swift; sourceTree = "<group>"; };
 		6564E9252CB69EF800262A90 /* UIView+ShakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShakeAnimation.swift"; sourceTree = "<group>"; };
+		6564E9272CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CreateEntity.swift"; sourceTree = "<group>"; };
+		6564E9292CB6AD6F00262A90 /* UIColor+ToHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ToHex.swift"; sourceTree = "<group>"; };
+		6564E92B2CB6ADE500262A90 /* String+EmojiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EmojiColor.swift"; sourceTree = "<group>"; };
+		6564E92E2CB6AE1E00262A90 /* UIImage+AverageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AverageColor.swift"; sourceTree = "<group>"; };
+		6564E9312CB6AEC300262A90 /* OperationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationType.swift; sourceTree = "<group>"; };
 		657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPulse-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657A16052CB27C7C00C6CF1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		657A16072CB27C7C00C6CF1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -417,6 +427,7 @@
 		655D787F2CB3EACC00773C64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6564E92D2CB6AE1400262A90 /* UIImage */,
 				651B2B712CB463F800D8EAF1 /* UIView */,
 				655D78BD2CB40AD200773C64 /* UICollectionView */,
 				655D78BC2CB40AC800773C64 /* UIColor */,
@@ -429,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */,
+				6564E92B2CB6ADE500262A90 /* String+EmojiColor.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -447,6 +459,7 @@
 			children = (
 				655D78912CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift */,
 				655D78922CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift */,
+				6564E9272CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift */,
 			);
 			path = CategoryEntity;
 			sourceTree = "<group>";
@@ -538,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				655D78802CB3EAE900773C64 /* UIColor+EncodeToData.swift */,
+				6564E9292CB6AD6F00262A90 /* UIColor+ToHex.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -659,6 +673,22 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		6564E92D2CB6AE1400262A90 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				6564E92E2CB6AE1E00262A90 /* UIImage+AverageColor.swift */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		6564E9302CB6AEB600262A90 /* OperationType */ = {
+			isa = PBXGroup;
+			children = (
+				6564E9312CB6AEC300262A90 /* OperationType.swift */,
+			);
+			path = OperationType;
+			sourceTree = "<group>";
+		};
 		657A15F92CB27C7C00C6CF1F = {
 			isa = PBXGroup;
 			children = (
@@ -712,6 +742,7 @@
 		657A161B2CB2F3A500C6CF1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6564E9302CB6AEB600262A90 /* OperationType */,
 				655D78952CB3EED000773C64 /* CoreData */,
 				657A16372CB3AACC00C6CF1F /* TabBarItem */,
 			);
@@ -902,6 +933,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */,
+				6564E9322CB6AEC300262A90 /* OperationType.swift in Sources */,
 				6564E90B2CB66AD300262A90 /* CalendarHeaderReusableViewDelegate.swift in Sources */,
 				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
 				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
@@ -936,6 +968,7 @@
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
 				6564E8F82CB65C3000262A90 /* ListOperationsCalendarDayCell.swift in Sources */,
 				655D78A22CB3F1FB00773C64 /* Injected.swift in Sources */,
+				6564E92C2CB6ADE500262A90 /* String+EmojiColor.swift in Sources */,
 				6564E91A2CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift in Sources */,
 				6564E9232CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
@@ -956,6 +989,7 @@
 				655D78412CB3D32500773C64 /* ListOperationsViewController.swift in Sources */,
 				655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
+				6564E9282CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift in Sources */,
 				6564E91C2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift in Sources */,
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
@@ -974,6 +1008,8 @@
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
+				6564E92A2CB6AD6F00262A90 /* UIColor+ToHex.swift in Sources */,
+				6564E92F2CB6AE1E00262A90 /* UIImage+AverageColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
