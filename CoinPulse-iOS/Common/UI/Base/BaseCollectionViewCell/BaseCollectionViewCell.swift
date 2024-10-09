@@ -1,5 +1,5 @@
 //
-//  BaseCollectionReusableView.swift
+//  BaseCollectionViewCell.swift
 //  CoinPulse-iOS
 //
 //  Created by Maksim Botalov on 07.10.2024.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-class BaseCollectionReusableView: UICollectionReusableView, ReusableView {
+class BaseCollectionViewCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupReusableView()
+        setupCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupReusableView() {
+    func setupCell() {
         backgroundColor = UIColor.clear
         
         setupSubviews()
