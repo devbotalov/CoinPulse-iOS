@@ -53,4 +53,8 @@ struct DynamicSections<T: Hashable> {
     mutating func appendSections(_ sections: [T]) {
         self.sections += sections
     }
+    
+    mutating func removeAll() {
+        self.sections.removeAll()
+    }
 }

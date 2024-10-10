@@ -20,11 +20,19 @@ final class ListOperationsPresenter: ListOperations.PresentationLogic {
         viewController?.displayFetchedInitialData(viewModel: viewModel)
     }
     
-    func presentFetchedWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Response) {
+    func presentFetchedWeekOfCalendar(response: ListOperations.FetchWeekOfCalendar.Response) {
         let viewModel = ListOperations.FetchWeekOfCalendar.ViewModel(
-            calendarDays: request.calendarDays
+            calendarDays: response.calendarDays
         )
         
         viewController?.displayFetchedWeekOfCalendar(viewModel: viewModel)
+    }
+    
+    func presentFetchedOperationsByWeek(response: ListOperations.FetchOperationsByWeek.Response) {
+        let viewModel = ListOperations.FetchOperationsByWeek.ViewModel(
+            operations: response.operations
+        )
+        
+        viewController?.displayFetchedOperationsByWeek(viewModel: viewModel)
     }
 }

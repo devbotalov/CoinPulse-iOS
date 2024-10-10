@@ -28,9 +28,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let categoriesPredicate = NSPredicate(format: "operations.@count > %d", 0)
-        fetchInitialData(categoriesPredicate: categoriesPredicate)
+        fetchInitialData()
     }
     
     override func setupCollectionView() {
@@ -169,16 +167,27 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
             self?.updateSnapshot()
         }
     }
+    
+    func displayFetchedOperationsByWeek(viewModel: ListOperations.FetchOperationsByWeek.ViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.operations = viewModel.operations
+            self?.updateSnapshot()
+        }
+    }
 }
 
 extension ListOperations.ViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch sections.getSection(by: indexPath.section) {
             case .calendar:
+                guard !calendarDays[indexPath.item].isSelected else { return }
+                
                 fetchWeekOfCalendar(
                     selectedDay: indexPath.item,
                     weekFromCurrent: weekFromCurrent
                 )
+                
+                fetchOperationsByDay(day: calendarDays[indexPath.item])
             default:
                 break
         }
@@ -208,13 +217,8 @@ private extension ListOperations.ViewController {
         }
     }
     
-    func fetchInitialData(operationsPredicate: NSPredicate? = nil, categoriesPredicate: NSPredicate? = nil) {
-        let request = ListOperations.FetchInitialData.Request(
-            weekFromCurrent: weekFromCurrent,
-            operationsPredicate: operationsPredicate,
-            categoriesPredicate: categoriesPredicate
-        )
-        
+    func fetchInitialData() {
+        let request = ListOperations.FetchInitialData.Request(weekFromCurrent: weekFromCurrent)
         interactor?.fetchInitialData(request: request)
     }
     
@@ -227,8 +231,15 @@ private extension ListOperations.ViewController {
         interactor?.fetchWeekOfCalendar(request: request)
     }
     
+    func fetchOperationsByDay(day: CalendarDay) {
+        let request = ListOperations.FetchOperationsByWeek.Request(day: day)
+        
+        interactor?.fetchOperationsByDay(request: request)
+    }
+    
     func updateSnapshot() {
         snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>()
+        sections.removeAll()
         
         if !calendarDays.isEmpty  {
             sections.appendSection(.calendar)
