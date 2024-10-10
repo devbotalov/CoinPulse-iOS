@@ -33,16 +33,19 @@ protocol ListOperationsDataPassing {}
 protocol ListOperationsDisplayLogic {
     func displayFetchedInitialData(viewModel: ListOperations.FetchInitialData.ViewModel)
     func displayFetchedWeekOfCalendar(viewModel: ListOperations.FetchWeekOfCalendar.ViewModel)
+    func displayFetchedOperationsByWeek(viewModel: ListOperations.FetchOperationsByWeek.ViewModel)
 }
 
 protocol ListOperationsPresentationLogic {
     func presentFetchedInitialData(response: ListOperations.FetchInitialData.Response)
-    func presentFetchedWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Response)
+    func presentFetchedWeekOfCalendar(response: ListOperations.FetchWeekOfCalendar.Response)
+    func presentFetchedOperationsByWeek(response: ListOperations.FetchOperationsByWeek.Response)
 }
 
 protocol ListOperationsBusinessLogic {
     func fetchInitialData(request: ListOperations.FetchInitialData.Request)
     func fetchWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Request)
+    func fetchOperationsByDay(request: ListOperations.FetchOperationsByWeek.Request)
 }
 
 protocol ListOperationsRoutingLogic {}
@@ -63,8 +66,6 @@ extension ListOperations {
             typealias Response = ([CalendarDay], [OperationEntity], [CategoryEntity])
             
             let weekFromCurrent: Int?
-            let operationsPredicate: NSPredicate?
-            let categoriesPredicate: NSPredicate?
         }
         
         struct Response {
@@ -94,6 +95,22 @@ extension ListOperations {
         
         struct ViewModel {
             let calendarDays: [CalendarDay]
+        }
+    }
+    
+    enum FetchOperationsByWeek {
+        struct Request: CoreDataRequestProtocol {
+            typealias Response = [OperationEntity]
+            
+            let day: CalendarDay
+        }
+        
+        struct Response {
+            let operations: [OperationEntity]
+        }
+        
+        struct ViewModel {
+            let operations: [OperationEntity]
         }
     }
 }

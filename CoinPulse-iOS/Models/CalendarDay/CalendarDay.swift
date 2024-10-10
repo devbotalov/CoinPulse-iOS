@@ -13,13 +13,15 @@ struct CalendarDay: CalendarDayProtocol {
     let number: String
     let isCurrent: Bool
     let isSelected: Bool
+    let date: Date
     
-    init(id: UUID = UUID(), title: String, number: String, isCurrent: Bool, isSelected: Bool) {
+    init(id: UUID = UUID(), title: String, number: String, isCurrent: Bool, isSelected: Bool, date: Date) {
         self.id = id
         self.title = title
         self.number = number
         self.isCurrent = isCurrent
         self.isSelected = isSelected
+        self.date = date
     }
     
     func select() -> CalendarDay {
@@ -28,7 +30,8 @@ struct CalendarDay: CalendarDayProtocol {
             title: self.title,
             number: self.number,
             isCurrent: self.isCurrent,
-            isSelected: !self.isSelected
+            isSelected: !self.isSelected,
+            date: self.date
         )
     }
 }

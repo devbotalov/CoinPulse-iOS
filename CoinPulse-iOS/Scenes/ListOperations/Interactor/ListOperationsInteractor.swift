@@ -17,15 +17,37 @@ final class ListOperationsInteractor: ListOperations.BusinessLogic {
     
     private let currentCalendar: Calendar = Calendar.current
     private let currentDate: Date = Date.now
+    private var currentInitialDate: (startDay: Date, endDate: Date) {
+        let startDay = currentCalendar.startOfDay(
+            for: currentDate
+        )
+        let endDay = currentCalendar.date(
+            byAdding: .day,
+            value: 1,
+            to: startDay
+        )?.addingTimeInterval(-1) ?? Date.now
+        
+        return (startDay, endDay)
+    }
     
     private var calendarDays: [CalendarDay] = []
     
     func fetchInitialData(request: ListOperations.FetchInitialData.Request) {
         configureWeekForCalendar(weekFromCurrent: request.weekFromCurrent)
         
+        let operationsPredicate = NSPredicate(
+            format: "date >= %@ AND date < %@",
+            currentInitialDate.startDay as NSDate,
+            currentInitialDate.endDate as NSDate
+        )
+        
+        let categoriesPredicate = NSPredicate(
+            format: "operations.@count > %d", 0
+        )
+        
         do {
-            operations = try coreDataManager.fetchOperations(with: request.operationsPredicate)
-            categories = try coreDataManager.fetchCategories(with: request.categoriesPredicate)
+            operations = try coreDataManager.fetchOperations(with: operationsPredicate)
+            categories = try coreDataManager.fetchCategories(with: categoriesPredicate)
             
             let response = ListOperations.FetchInitialData.Response(
                 calendarDays: calendarDays,
@@ -47,7 +69,36 @@ final class ListOperationsInteractor: ListOperations.BusinessLogic {
         )
         
         let response = ListOperations.FetchWeekOfCalendar.Response(calendarDays: calendarDays)
-        presenter?.presentFetchedWeekOfCalendar(request: response)
+        presenter?.presentFetchedWeekOfCalendar(response: response)
+    }
+    
+    func fetchOperationsByDay(request: ListOperations.FetchOperationsByWeek.Request) {
+        let startOfDay = currentCalendar.startOfDay(
+            for: request.day.date
+        )
+        let endOfDay = currentCalendar.date(
+            byAdding: .day,
+            value: 1,
+            to: startOfDay
+        )?.addingTimeInterval(-1) ?? Date.now
+        
+        let predicate = NSPredicate(
+            format: "date >= %@ AND date < %@",
+            startOfDay as NSDate,
+            endOfDay as NSDate
+        )
+        
+        do {
+            operations = try coreDataManager.fetchOperations(
+                with: predicate
+            )
+            
+            let response = ListOperations.FetchOperationsByWeek.Response(operations: operations)
+            presenter?.presentFetchedOperationsByWeek(response: response)
+        } catch let error {
+            // FIXME: Display notifications error
+            print("===", error.localizedDescription)
+        }
     }
 }
 
@@ -83,7 +134,8 @@ private extension ListOperations.Interactor {
                     title: titleDateFormatter.string(from: date),
                     number: numberDateFormatter.string(from: date),
                     isCurrent: currentDayOfThisWeek == date,
-                    isSelected: day == selectedDay
+                    isSelected: day == selectedDay,
+                    date: currentCalendar.startOfDay(for: date)
                 ))
             }
         }
