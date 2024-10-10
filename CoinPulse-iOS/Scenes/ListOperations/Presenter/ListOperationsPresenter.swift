@@ -10,12 +10,21 @@ import Foundation
 final class ListOperationsPresenter: ListOperations.PresentationLogic {
     var viewController: ListOperations.DisplayLogic?
     
-    func presentFetchedData(response: ListOperations.FetchData.Response) {
-        let viewModel = ListOperations.FetchData.ViewModel(
+    func presentFetchedInitialData(response: ListOperations.FetchInitialData.Response) {
+        let viewModel = ListOperations.FetchInitialData.ViewModel(
+            calendarDays: response.calendarDays,
             operations: response.operations,
             categories: response.categories
         )
         
-        viewController?.displayFetchedData(viewModel: viewModel)
+        viewController?.displayFetchedInitialData(viewModel: viewModel)
+    }
+    
+    func presentFetchedWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Response) {
+        let viewModel = ListOperations.FetchWeekOfCalendar.ViewModel(
+            calendarDays: request.calendarDays
+        )
+        
+        viewController?.displayFetchedWeekOfCalendar(viewModel: viewModel)
     }
 }

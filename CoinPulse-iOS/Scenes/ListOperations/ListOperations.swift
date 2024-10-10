@@ -31,15 +31,18 @@ protocol ListOperationsDataStore {
 protocol ListOperationsDataPassing {}
 
 protocol ListOperationsDisplayLogic {
-    func displayFetchedData(viewModel: ListOperations.FetchData.ViewModel)
+    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialData.ViewModel)
+    func displayFetchedWeekOfCalendar(viewModel: ListOperations.FetchWeekOfCalendar.ViewModel)
 }
 
 protocol ListOperationsPresentationLogic {
-    func presentFetchedData(response: ListOperations.FetchData.Response)
+    func presentFetchedInitialData(response: ListOperations.FetchInitialData.Response)
+    func presentFetchedWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Response)
 }
 
 protocol ListOperationsBusinessLogic {
-    func fetchData(request: ListOperations.FetchData.Request)
+    func fetchInitialData(request: ListOperations.FetchInitialData.Request)
+    func fetchWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Request)
 }
 
 protocol ListOperationsRoutingLogic {}
@@ -55,22 +58,42 @@ extension ListOperations {
 }
 
 extension ListOperations {
-    enum FetchData {
+    enum FetchInitialData {
         struct Request: CoreDataRequestProtocol {
-            typealias Response = ([OperationEntity], [CategoryEntity])
+            typealias Response = ([CalendarDay], [OperationEntity], [CategoryEntity])
             
+            let weekFromCurrent: Int?
             let operationsPredicate: NSPredicate?
             let categoriesPredicate: NSPredicate?
         }
         
         struct Response {
+            let calendarDays: [CalendarDay]
             let operations: [OperationEntity]
             let categories: [CategoryEntity]
         }
         
         struct ViewModel {
+            let calendarDays: [CalendarDay]
             let operations: [OperationEntity]
             let categories: [CategoryEntity]
+        }
+    }
+    
+    enum FetchWeekOfCalendar {
+        struct Request: CoreDataRequestProtocol {
+            typealias Response = [CalendarDay]
+            
+            let selectedDay: Int?
+            let weekFromCurrent: Int?
+        }
+        
+        struct Response {
+            let calendarDays: [CalendarDay]
+        }
+        
+        struct ViewModel {
+            let calendarDays: [CalendarDay]
         }
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
     
-    private let shortDayLabel: UILabel = {
+    private let titleDayLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(resource: .accentLightGray)
         label.textAlignment = .center
@@ -19,7 +19,7 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
         return label
     }()
     
-    private let dayMonthLabel: UILabel = {
+    private let numberDayLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(resource: .primaryText)
         label.textAlignment = .center
@@ -48,8 +48,8 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
         super.setupSubviews()
         addSubview(commonStackView)
         
-        commonStackView.addArrangedSubview(shortDayLabel)
-        commonStackView.addArrangedSubview(dayMonthLabel)
+        commonStackView.addArrangedSubview(titleDayLabel)
+        commonStackView.addArrangedSubview(numberDayLabel)
     }
     
     override func setupConstraints() {
@@ -63,17 +63,24 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
 }
 
 extension ListOperationsCalendarDayCell: ListOperationsCalendarDayCellProtocol {
-    func configureCell(shortDay: String, dayMonth: String, isCurrent: Bool, isSelected: Bool) {
-        shortDayLabel.text = shortDay
-        dayMonthLabel.text = dayMonth
+    func configureCell(day: CalendarDay?) {
+        guard let day else { return }
         
-        if isCurrent {
-            dayMonthLabel.textColor = .white
+        titleDayLabel.text = day.title
+        numberDayLabel.text = day.number
+        
+        if day.isCurrent {
+            numberDayLabel.textColor = .white
             backgroundColor = UIColor(resource: .accentBlue)
+        } else {
+            numberDayLabel.textColor = UIColor(resource: .primaryText)
+            backgroundColor = UIColor(resource: .accentWhite)
         }
         
-        if isSelected {
+        if day.isSelected {
             setBorderColor(UIColor(resource: .accentBlue), width: 1)
+        } else {
+            setBorderColor(UIColor(resource: .accentWhite), width: 1)
         }
     }
 }

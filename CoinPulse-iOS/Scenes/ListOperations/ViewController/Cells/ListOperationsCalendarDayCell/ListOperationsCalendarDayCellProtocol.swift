@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListOperationsCalendarDayCellProtocol {
-    func configureCell(shortDay shortDay: String, dayMonth: String, isCurrent: Bool, isSelected: Bool)
+    func configureCell(day: CalendarDay?)
 }
