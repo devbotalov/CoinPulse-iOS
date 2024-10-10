@@ -8,7 +8,7 @@
 import Foundation
 
 enum ModelForSection: Hashable {
-    case calendar(Int)
+    case calendar(CalendarDay)
     case operations(OperationEntity)
     case categories(CategoryEntity)
 }

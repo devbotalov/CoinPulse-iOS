@@ -91,6 +91,8 @@
 		657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */; };
 		657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */; };
 		657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16382CB3AAD100C6CF1F /* TabBarItem.swift */; };
+		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
+		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +182,8 @@
 		657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProtocol.swift; sourceTree = "<group>"; };
 		657A16382CB3AAD100C6CF1F /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
+		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,6 +762,7 @@
 		657A161B2CB2F3A500C6CF1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65E6284E2CB7DE1C00319F3E /* CalendarDay */,
 				6564E9452CB6D91400262A90 /* ModelForSection */,
 				6564E9332CB6BF8C00262A90 /* Request */,
 				6564E9302CB6AEB600262A90 /* OperationType */,
@@ -877,6 +882,15 @@
 			path = TabBarItem;
 			sourceTree = "<group>";
 		};
+		65E6284E2CB7DE1C00319F3E /* CalendarDay */ = {
+			isa = PBXGroup;
+			children = (
+				65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */,
+				65E6284F2CB7DE2800319F3E /* CalendarDay.swift */,
+			);
+			path = CalendarDay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -969,6 +983,7 @@
 				6564E9182CB689FA00262A90 /* ListOperationsOperationCell.swift in Sources */,
 				655D78C82CB41B7300773C64 /* DynamicSections.swift in Sources */,
 				655D789A2CB3EEED00773C64 /* OperationEntity+CoreDataClass.swift in Sources */,
+				65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */,
 				6564E9092CB66ACB00262A90 /* CalendarHeaderReusableViewProtocol.swift in Sources */,
 				655D789B2CB3EEED00773C64 /* OperationEntity+CoreDataProperties.swift in Sources */,
 				6564E8FA2CB65C5800262A90 /* ListOperationsCalendarDayCellProtocol.swift in Sources */,
@@ -1026,6 +1041,7 @@
 				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				6564E9382CB6BFD100262A90 /* DefaultRequestProtocol.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
+				65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */,
 				651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 				6564E92A2CB6AD6F00262A90 /* UIColor+ToHex.swift in Sources */,

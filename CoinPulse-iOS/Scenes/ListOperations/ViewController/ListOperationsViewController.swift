@@ -20,13 +20,17 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     private var snapshot: NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>!
     
     private var sections = DynamicSections<ListOperations.Sections>()
-    private var viewModel: ListOperations.FetchData.ViewModel?
+    private var calendarDays: [CalendarDay] = []
+    private var operations: [OperationEntity] = []
+    private var categories: [CategoryEntity] = []
+    
+    private var weekFromCurrent: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let categoriesPredicate = NSPredicate(format: "operations.@count > %d", 0)
-        fetchData(categoriesPredicate: categoriesPredicate)
+        fetchInitialData(categoriesPredicate: categoriesPredicate)
     }
     
     override func setupCollectionView() {
@@ -72,24 +76,17 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
             switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
                 case .calendar:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCalendarDayCell
-                    
-                    // FIXME: Fix configureCell
-                    cell.configureCell(
-                        shortDay: "S",
-                        dayMonth: "12",
-                        isCurrent: indexPath.item == 1,
-                        isSelected: indexPath.item == 3
-                    )
+                    cell.configureCell(day: self?.calendarDays[indexPath.item])
                     return cell
                     
                 case .operations:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsOperationCell
-                    cell.configureCell(with: self?.viewModel?.operations[indexPath.item])
+                    cell.configureCell(with: self?.operations[indexPath.item])
                     return cell
                     
                 case .categories:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCategoryCell
-                    cell.configureCell(with: self?.viewModel?.categories[indexPath.item])
+                    cell.configureCell(with: self?.categories[indexPath.item])
                     return cell
                 case .unknown:
                     return BaseCollectionViewCell()
@@ -101,10 +98,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                 switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
                     case .calendar:
                         let header = collectionView.dequeueHeader(for: indexPath) as CalendarHeaderReusableView
-                        
-                        // FIXME: Fix configureView
                         header.configureView(
-                            with: "Hello",
+                            with: "Calendar",
                             delegate: self
                         )
                         return header
@@ -159,10 +154,33 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         ])
     }
     
-    func displayFetchedData(viewModel: ListOperations.FetchData.ViewModel) {
+    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialData.ViewModel) {
         DispatchQueue.main.async { [weak self] in
-            self?.viewModel = viewModel
-            self?.updateSnapshot(viewModel: viewModel)
+            self?.calendarDays = viewModel.calendarDays
+            self?.operations = viewModel.operations
+            self?.categories = viewModel.categories
+            self?.updateSnapshot()
+        }
+    }
+    
+    func displayFetchedWeekOfCalendar(viewModel: ListOperations.FetchWeekOfCalendar.ViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.calendarDays = viewModel.calendarDays
+            self?.updateSnapshot()
+        }
+    }
+}
+
+extension ListOperations.ViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch sections.getSection(by: indexPath.section) {
+            case .calendar:
+                fetchWeekOfCalendar(
+                    selectedDay: indexPath.item,
+                    weekFromCurrent: weekFromCurrent
+                )
+            default:
+                break
         }
     }
 }
@@ -175,7 +193,7 @@ private extension ListOperations.ViewController {
                     ListOperationsCalendarDayCellLayout.layout(
                         countDay: 7,
                         width: self?.collectionView.frame.width ?? 0,
-                        operationsIsEmpty: (self?.viewModel?.operations ?? []).isEmpty
+                        operationsIsEmpty: (self?.operations ?? []).isEmpty
                     )
                     
                 case .operations:
@@ -190,36 +208,46 @@ private extension ListOperations.ViewController {
         }
     }
     
-    func fetchData(operationsPredicate: NSPredicate? = nil, categoriesPredicate: NSPredicate? = nil) {
-        let request = ListOperations.FetchData.Request(
+    func fetchInitialData(operationsPredicate: NSPredicate? = nil, categoriesPredicate: NSPredicate? = nil) {
+        let request = ListOperations.FetchInitialData.Request(
+            weekFromCurrent: weekFromCurrent,
             operationsPredicate: operationsPredicate,
             categoriesPredicate: categoriesPredicate
         )
         
-        interactor?.fetchData(request: request)
+        interactor?.fetchInitialData(request: request)
     }
     
-    func updateSnapshot(viewModel: ListOperations.FetchData.ViewModel) {
+    func fetchWeekOfCalendar(selectedDay: Int? = nil, weekFromCurrent: Int? = nil) {
+        let request = ListOperations.FetchWeekOfCalendar.Request(
+            selectedDay: selectedDay,
+            weekFromCurrent: weekFromCurrent
+        )
+        
+        interactor?.fetchWeekOfCalendar(request: request)
+    }
+    
+    func updateSnapshot() {
         snapshot = NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>()
         
-        sections.appendSection(.calendar)
-        snapshot.appendSections([.calendar])
+        if !calendarDays.isEmpty  {
+            sections.appendSection(.calendar)
+            snapshot.appendSections([.calendar])
+            let calendarDays = calendarDays.map { ModelForSection.calendar($0) }
+            snapshot.appendItems(calendarDays, toSection: .calendar)
+        }
         
-        // FIXME: Fix days
-        let days = [1, 2, 3, 4, 5, 6, 7].map { ModelForSection.calendar($0) }
-        snapshot.appendItems(days, toSection: .calendar)
-        
-        if !viewModel.operations.isEmpty {
+        if !operations.isEmpty  {
             sections.appendSection(.operations)
             snapshot.appendSections([.operations])
-            let operations = viewModel.operations.map { ModelForSection.operations($0) }
+            let operations = operations.map { ModelForSection.operations($0) }
             snapshot.appendItems(operations, toSection: .operations)
         }
         
-        if !viewModel.categories.isEmpty {
+        if !categories.isEmpty  {
             sections.appendSection(.categories)
             snapshot.appendSections([.categories])
-            let categories = viewModel.categories.map { ModelForSection.categories($0) }
+            let categories = categories.map { ModelForSection.categories($0) }
             snapshot.appendItems(categories, toSection: .categories)
         }
         
@@ -235,7 +263,16 @@ extension ListOperations.ViewController: LargeHeaderReusableViewDelegate {
 
 extension ListOperations.ViewController: CalendarHeaderReusableViewDelegate {
     func actionButtonDidTapped(_ sender: UIButton) {
-        // Tap
+        switch sender.tag {
+            case 0:
+                weekFromCurrent -= 1
+                fetchWeekOfCalendar(weekFromCurrent: weekFromCurrent)
+            case 1:
+                weekFromCurrent += 1
+                fetchWeekOfCalendar(weekFromCurrent: weekFromCurrent)
+            default:
+                break
+        }
     }
 }
 

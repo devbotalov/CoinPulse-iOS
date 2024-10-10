@@ -21,6 +21,7 @@ final class CalendarHeaderReusableView: BaseCollectionReusableView {
     
     private let leftActionButton: UIButton = {
         let button = UIButton()
+        button.tag = 0
         button.setImage(UIImage(resource: .leftArrow), for: .normal)
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor(resource: .accentGray)
@@ -30,6 +31,7 @@ final class CalendarHeaderReusableView: BaseCollectionReusableView {
     
     private let rightActionButton: UIButton = {
         let button = UIButton()
+        button.tag = 1
         button.setImage(UIImage(resource: .rightArrow), for: .normal)
         button.contentMode = .scaleAspectFit
         button.tintColor = UIColor(resource: .accentGray)
