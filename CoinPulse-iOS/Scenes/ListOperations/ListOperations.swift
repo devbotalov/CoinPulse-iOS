@@ -73,12 +73,14 @@ extension ListOperations {
             let calendarDays: [CalendarDay]
             let operations: [OperationEntity]
             let categories: [CategoryEntity]
+            let weeklyAmount: Double
         }
         
         struct ViewModel {
             let calendarDays: [CalendarDay]
             let operations: [OperationEntity]
             let categories: [CategoryEntity]
+            let weeklyAmount: Double
         }
     }
     

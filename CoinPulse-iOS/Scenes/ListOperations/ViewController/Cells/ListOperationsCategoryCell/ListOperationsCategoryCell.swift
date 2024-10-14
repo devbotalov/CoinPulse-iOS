@@ -90,6 +90,8 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
         return stackView
     }()
     
+    private var loadingViewTrailingConstraint = NSLayoutConstraint()
+    
     override func setupCell() {
         super.setupCell()
         backgroundColor = UIColor(resource: .secondaryBackground)
@@ -114,11 +116,16 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
     override func setupConstraints() {
         super.setupConstraints()
         
+        loadingViewTrailingConstraint = loadingView.widthAnchor.constraint(
+            equalTo: widthAnchor,
+            multiplier: 1
+        )
+        
         NSLayoutConstraint.activate([
             loadingView.topAnchor.constraint(equalTo: topAnchor),
             loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
             loadingView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            loadingView.widthAnchor.constraint(equalToConstant: 200),
+            loadingViewTrailingConstraint,
             
             categoryEmojiView.centerYAnchor.constraint(equalTo: centerYAnchor),
             categoryEmojiView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -164,5 +171,14 @@ extension ListOperationsCategoryCell: ListOperationsCategoryCellProtocol {
             with: category.emoji,
             color: UIColor(hex: category.color)
         )
+        
+        loadingViewTrailingConstraint.isActive = false
+        loadingViewTrailingConstraint = loadingView.widthAnchor.constraint(
+            equalTo: widthAnchor,
+            multiplier: percentage / 100
+        )
+        loadingViewTrailingConstraint.isActive = true
+        
+        layoutIfNeeded()
     }
 }
