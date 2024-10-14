@@ -24,26 +24,27 @@ struct ListOperations: ModuleProtocol {
 }
 
 protocol ListOperationsDataStore {
-    var operations: [OperationEntity] { get }
-    var categories: [CategoryEntity] { get }
+    var operationsPerWeek: [OperationEntity] { get }
+    var categoriesPerWeek: [CategoryEntity] { get }
+    var operationsPerDay: [OperationEntity] { get }
 }
 
 protocol ListOperationsDataPassing {}
 
 protocol ListOperationsDisplayLogic {
-    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialData.ViewModel)
+    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialWeekData.ViewModel)
     func displayFetchedWeekOfCalendar(viewModel: ListOperations.FetchWeekOfCalendar.ViewModel)
     func displayFetchedOperationsByWeek(viewModel: ListOperations.FetchOperationsByWeek.ViewModel)
 }
 
 protocol ListOperationsPresentationLogic {
-    func presentFetchedInitialData(response: ListOperations.FetchInitialData.Response)
+    func presentFetchedInitialData(response: ListOperations.FetchInitialWeekData.Response)
     func presentFetchedWeekOfCalendar(response: ListOperations.FetchWeekOfCalendar.Response)
     func presentFetchedOperationsByWeek(response: ListOperations.FetchOperationsByWeek.Response)
 }
 
 protocol ListOperationsBusinessLogic {
-    func fetchInitialData(request: ListOperations.FetchInitialData.Request)
+    func fetchInitialDataPerWeek(request: ListOperations.FetchInitialWeekData.Request)
     func fetchWeekOfCalendar(request: ListOperations.FetchWeekOfCalendar.Request)
     func fetchOperationsByDay(request: ListOperations.FetchOperationsByWeek.Request)
 }
@@ -61,7 +62,7 @@ extension ListOperations {
 }
 
 extension ListOperations {
-    enum FetchInitialData {
+    enum FetchInitialWeekData {
         struct Request: CoreDataRequestProtocol {
             typealias Response = ([CalendarDay], [OperationEntity], [CategoryEntity])
             

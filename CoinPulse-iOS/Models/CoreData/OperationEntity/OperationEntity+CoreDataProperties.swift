@@ -13,7 +13,9 @@ import CoreData
 extension OperationEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<OperationEntity> {
-        return NSFetchRequest<OperationEntity>(entityName: "OperationEntity")
+        let request = NSFetchRequest<OperationEntity>(entityName: "OperationEntity")
+        request.returnsObjectsAsFaults = false
+        return request
     }
 
     @NSManaged public var amount: Double

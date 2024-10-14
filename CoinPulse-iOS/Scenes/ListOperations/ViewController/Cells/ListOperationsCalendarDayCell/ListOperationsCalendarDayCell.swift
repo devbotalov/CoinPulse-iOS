@@ -74,13 +74,13 @@ extension ListOperationsCalendarDayCell: ListOperationsCalendarDayCellProtocol {
             backgroundColor = UIColor(resource: .accentBlue)
         } else {
             numberDayLabel.textColor = UIColor(resource: .primaryText)
-            backgroundColor = UIColor(resource: .accentWhite)
+            backgroundColor = UIColor(resource: .secondaryBackground)
         }
         
         if day.isSelected {
             setBorderColor(UIColor(resource: .accentBlue), width: 1)
         } else {
-            setBorderColor(UIColor(resource: .accentWhite), width: 1)
+            setBorderColor(UIColor(resource: .secondaryBackground), width: 1)
         }
     }
 }

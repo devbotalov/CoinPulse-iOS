@@ -13,7 +13,9 @@ import CoreData
 extension CategoryEntity {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CategoryEntity> {
-        return NSFetchRequest<CategoryEntity>(entityName: "CategoryEntity")
+        let request = NSFetchRequest<CategoryEntity>(entityName: "CategoryEntity")
+        request.returnsObjectsAsFaults = false
+        return request
     }
 
     @NSManaged public var color: String

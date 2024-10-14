@@ -20,15 +20,17 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     private var snapshot: NSDiffableDataSourceSnapshot<ListOperations.Sections, ModelForSection>!
     
     private var sections = DynamicSections<ListOperations.Sections>()
+    
     private var calendarDays: [CalendarDay] = []
     private var operations: [OperationEntity] = []
     private var categories: [CategoryEntity] = []
+    private var weeklyAmount: Double = 0
     
     private var weekFromCurrent: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchInitialData()
+        fetchInitialWeekData(weekFromCurrent: weekFromCurrent)
     }
     
     override func setupCollectionView() {
@@ -84,7 +86,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                     
                 case .categories:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as ListOperationsCategoryCell
-                    cell.configureCell(with: self?.categories[indexPath.item])
+                    cell.configureCell(with: self?.categories[indexPath.item], commonAmount: self?.weeklyAmount)
                     return cell
                 case .unknown:
                     return BaseCollectionViewCell()
@@ -152,7 +154,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         ])
     }
     
-    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialData.ViewModel) {
+    func displayFetchedInitialData(viewModel: ListOperations.FetchInitialWeekData.ViewModel) {
         DispatchQueue.main.async { [weak self] in
             self?.calendarDays = viewModel.calendarDays
             self?.operations = viewModel.operations
@@ -217,9 +219,9 @@ private extension ListOperations.ViewController {
         }
     }
     
-    func fetchInitialData() {
-        let request = ListOperations.FetchInitialData.Request(weekFromCurrent: weekFromCurrent)
-        interactor?.fetchInitialData(request: request)
+    func fetchInitialWeekData(weekFromCurrent: Int) {
+        let request = ListOperations.FetchInitialWeekData.Request(weekFromCurrent: weekFromCurrent)
+        interactor?.fetchInitialDataPerWeek(request: request)
     }
     
     func fetchWeekOfCalendar(selectedDay: Int? = nil, weekFromCurrent: Int? = nil) {
@@ -278,9 +280,11 @@ extension ListOperations.ViewController: CalendarHeaderReusableViewDelegate {
             case 0:
                 weekFromCurrent -= 1
                 fetchWeekOfCalendar(weekFromCurrent: weekFromCurrent)
+                fetchInitialWeekData(weekFromCurrent: weekFromCurrent)
             case 1:
                 weekFromCurrent += 1
                 fetchWeekOfCalendar(weekFromCurrent: weekFromCurrent)
+                fetchInitialWeekData(weekFromCurrent: weekFromCurrent)
             default:
                 break
         }

@@ -33,7 +33,13 @@ extension CoreDataManager {
         guard let context else { return [] }
         let fetchRequest = CategoryEntity.fetchRequest()
         fetchRequest.predicate = predicate
-        return try context.fetch(fetchRequest)
+        let categories = try context.fetch(fetchRequest)
+        categories.forEach { category in
+            category.willAccessValue(forKey: "operations")
+        }
+        
+        print("===", categories)
+        return categories
     }
 }
 

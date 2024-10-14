@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListOperationsCategoryCellProtocol {
-    func configureCell(with category: CategoryEntity?)
+    func configureCell(with category: CategoryEntity?, commonAmount: Double?)
 }
