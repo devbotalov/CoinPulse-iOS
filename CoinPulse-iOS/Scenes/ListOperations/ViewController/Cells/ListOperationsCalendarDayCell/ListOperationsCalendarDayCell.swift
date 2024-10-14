@@ -29,10 +29,34 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
         return label
     }()
     
+    private let expenseDotView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(resource: .accentRed)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private let incomeDotView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(resource: .accentGreen)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let commonStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.spacing = 12
+        stackView.spacing = 8
         stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private let dotsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 4
+        stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,14 +66,19 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
     override func setupCell() {
         super.setupCell()
         setCornerRadius(12)
+        expenseDotView.setCornerRadius(3)
+        incomeDotView.setCornerRadius(3)
     }
     
     override func setupSubviews() {
         super.setupSubviews()
         addSubview(commonStackView)
+        addSubview(dotsStackView)
         
         commonStackView.addArrangedSubview(titleDayLabel)
         commonStackView.addArrangedSubview(numberDayLabel)
+        dotsStackView.addArrangedSubview(expenseDotView)
+        dotsStackView.addArrangedSubview(incomeDotView)
     }
     
     override func setupConstraints() {
@@ -57,7 +86,15 @@ final class ListOperationsCalendarDayCell: BaseCollectionViewCell {
         
         NSLayoutConstraint.activate([
             commonStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            commonStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            commonStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            dotsStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            dotsStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            expenseDotView.widthAnchor.constraint(equalToConstant: 6),
+            expenseDotView.heightAnchor.constraint(equalToConstant: 6),
+            incomeDotView.widthAnchor.constraint(equalToConstant: 6),
+            incomeDotView.heightAnchor.constraint(equalToConstant: 6),
         ])
     }
 }
@@ -68,6 +105,27 @@ extension ListOperationsCalendarDayCell: ListOperationsCalendarDayCellProtocol {
         
         titleDayLabel.text = day.title
         numberDayLabel.text = day.number
+        
+        expenseDotView.isHidden = true
+        incomeDotView.isHidden = true
+        
+        // FIXME: Fix after brain
+        /*
+        switch (day.isExpense, day.isIncome) {
+            case (true, true):
+                expenseDotView.isHidden = false
+                incomeDotView.isHidden = false
+            case (true, false):
+                expenseDotView.isHidden = false
+                incomeDotView.isHidden = true
+            case (false, true):
+                expenseDotView.isHidden = true
+                incomeDotView.isHidden = false
+            case (false, false):
+                expenseDotView.isHidden = true
+                incomeDotView.isHidden = true
+        }
+         */
         
         if day.isCurrent {
             numberDayLabel.textColor = .white
