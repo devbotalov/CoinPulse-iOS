@@ -161,9 +161,7 @@ extension ListOperationsCategoryCell: ListOperationsCategoryCellProtocol {
         
          let percentage = amount * 100 / commonAmount
         
-        // FIXME: Fix to currency
-        amountLabel.text = amount.description
-        
+        amountLabel.text = amount.toCurrency
         percentageLabel.text = "\(percentage)%"
         
         loadingView.backgroundColor = UIColor(hex: category.color).withAlphaComponent(0.2)

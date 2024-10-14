@@ -91,6 +91,7 @@
 		657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */; };
 		657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */; };
 		657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16382CB3AAD100C6CF1F /* TabBarItem.swift */; };
+		65A5E2172CBD4F5100D94763 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2162CBD4F5100D94763 /* Double+Currency.swift */; };
 		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
 		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -182,6 +183,7 @@
 		657A16332CB3A9F400C6CF1F /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProtocol.swift; sourceTree = "<group>"; };
 		657A16382CB3AAD100C6CF1F /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		65A5E2162CBD4F5100D94763 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -451,6 +453,7 @@
 			children = (
 				655D78832CB3EB1200773C64 /* Data+DecodeToColor.swift */,
 				6564E92B2CB6ADE500262A90 /* String+EmojiColor.swift */,
+				65A5E2162CBD4F5100D94763 /* Double+Currency.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
 				655D78CC2CB41ED400773C64 /* ListOperationsCategoryCellLayout.swift in Sources */,
+				65A5E2172CBD4F5100D94763 /* Double+Currency.swift in Sources */,
 				6564E90F2CB6739200262A90 /* UIColor+BorderColor.swift in Sources */,
 				6564E9032CB6625F00262A90 /* ListOperationsCalendarDayCellLayout.swift in Sources */,
 				651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */,

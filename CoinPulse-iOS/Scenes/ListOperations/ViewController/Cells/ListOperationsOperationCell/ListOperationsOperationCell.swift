@@ -34,7 +34,7 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
         label.textColor = UIColor(resource: .primaryText)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -98,6 +98,7 @@ final class ListOperationsOperationCell: BaseCollectionViewCell {
             noteLabel.topAnchor.constraint(equalTo: categoryTitleLabel.bottomAnchor, constant: 4),
             noteLabel.leadingAnchor.constraint(equalTo: categoryTitleLabel.leadingAnchor),
             noteLabel.trailingAnchor.constraint(equalTo: categoryTitleLabel.trailingAnchor),
+            noteLabel.heightAnchor.constraint(equalToConstant: 34),
             
             amountAndAccountStackView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 4),
             amountAndAccountStackView.leadingAnchor.constraint(equalTo: categoryTitleLabel.leadingAnchor),
@@ -113,9 +114,7 @@ extension ListOperationsOperationCell: ListOperationsOperationCellProtocol {
         
         categoryTitleLabel.text = operation.category.title
         noteLabel.text = operation.note
-        
-        // FIXME: Fix to currency
-        amountLabel.text = operation.amount.description
+        amountLabel.text = operation.amount.toCurrency
         
         // FIXME: Fix to account
         accountLabel.text = "Cash"
