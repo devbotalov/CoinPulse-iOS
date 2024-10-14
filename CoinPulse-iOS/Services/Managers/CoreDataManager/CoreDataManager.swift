@@ -18,6 +18,34 @@ final class CoreDataManager: CoreDataManagerProtocol {
     private init() {
         setupPersistentContainer()
         setupManagedObjectContext()
+        
+        // FIXME: Fixed after
+        guard let context else { return }
+        
+        //        let category = CategoryEntity.create(
+        //            context: context,
+        //            emoji: "🛍️",
+        //            title: "Shopping",
+        //            type: OperationType.expense.rawValue,
+        //            operations: []
+        //        )
+        
+        //        let fetchCategory = CategoryEntity.fetchRequest()
+        //        let categories = try! context.fetch(fetchCategory)
+        //
+        //        let shop = categories.first(where: { $0.title == "Shopping" })!
+        //
+        //        shop.operations = [
+        //            OperationEntity.create(
+        //                context: context,
+        //                amount: 1000,
+        //                note: "Note",
+        //                type: OperationType.expense.rawValue,
+        //                category: shop
+        //            )
+        //        ]
+        //
+        //        try? saveContext()
     }
 }
 

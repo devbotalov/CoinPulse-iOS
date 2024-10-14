@@ -26,6 +26,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
     private var categories: [CategoryEntity] = []
     private var weeklyAmount: Double = 0
     
+    private var isCollapsedOperations: Bool = true
     private var weekFromCurrent: Int = 0
     
     override func viewDidLoad() {
@@ -129,7 +130,10 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                 switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
                     case .operations:
                         let footer = collectionView.dequeueFooter(for: indexPath) as AllOperationsFooterReusableView
-                        footer.configureView(isCollapsed: true, delegate: self)
+                        footer.configureView(
+                            isCollapsed: self?.isCollapsedOperations ?? true,
+                            delegate: self
+                        )
                         return footer
                     default:
                         return BaseCollectionReusableView()
@@ -254,8 +258,10 @@ private extension ListOperations.ViewController {
         if !operations.isEmpty  {
             sections.appendSection(.operations)
             snapshot.appendSections([.operations])
-            let operations = operations.map { ModelForSection.operations($0) }
-            snapshot.appendItems(operations, toSection: .operations)
+            let operations = operations
+                .map { ModelForSection.operations($0) }
+                .prefix(isCollapsedOperations ? 2 : 6)
+            snapshot.appendItems(Array(operations), toSection: .operations)
         }
         
         if !categories.isEmpty  {
@@ -294,6 +300,17 @@ extension ListOperations.ViewController: CalendarHeaderReusableViewDelegate {
 
 extension ListOperations.ViewController: AllOperationsFooterReusableViewDelegate {
     func viewDidTapped() {
-        // Tap
+        isCollapsedOperations.toggle()
+        
+        guard
+            let index = sections.getIndex(of: .operations),
+            let footer = collectionView.supplementaryView(
+            forElementKind: UICollectionView.elementKindSectionFooter,
+            at: IndexPath(item: 0, section: index)) as? AllOperationsFooterReusableView
+        else { return }
+            
+        footer.configureView(isCollapsed: isCollapsedOperations, delegate: self)
+        
+        updateSnapshot()
     }
 }
