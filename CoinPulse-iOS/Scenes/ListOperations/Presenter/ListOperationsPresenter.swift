@@ -10,8 +10,8 @@ import Foundation
 final class ListOperationsPresenter: ListOperations.PresentationLogic {
     var viewController: ListOperations.DisplayLogic?
     
-    func presentFetchedInitialData(response: ListOperations.FetchInitialData.Response) {
-        let viewModel = ListOperations.FetchInitialData.ViewModel(
+    func presentFetchedInitialData(response: ListOperations.FetchInitialWeekData.Response) {
+        let viewModel = ListOperations.FetchInitialWeekData.ViewModel(
             calendarDays: response.calendarDays,
             operations: response.operations,
             categories: response.categories

@@ -141,8 +141,8 @@ final class ListOperationsCategoryCell: BaseCollectionViewCell {
 }
 
 extension ListOperationsCategoryCell: ListOperationsCategoryCellProtocol {
-    func configureCell(with category: CategoryEntity?) {
-        guard let category else { return }
+    func configureCell(with category: CategoryEntity?, commonAmount: Double?) {
+        guard let category, let commonAmount else { return }
         
         titleLabel.text = category.title
         countLabel.text = "\(category.operations.count) operations"
@@ -152,11 +152,12 @@ extension ListOperationsCategoryCell: ListOperationsCategoryCellProtocol {
             .map({ $0.amount })
             .reduce(0.0, +)
         
+         let percentage = amount * 100 / commonAmount
+        
         // FIXME: Fix to currency
         amountLabel.text = amount.description
         
-        // FIXME: Fix percentage
-        percentageLabel.text = "57%"
+        percentageLabel.text = "\(percentage)%"
         
         loadingView.backgroundColor = UIColor(hex: category.color).withAlphaComponent(0.2)
         categoryEmojiView.configureView(

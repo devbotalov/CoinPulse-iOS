@@ -12,4 +12,6 @@ protocol CalendarDayProtocol: Hashable, Identifiable {
     var number: String { get }
     var isCurrent: Bool { get }
     var isSelected: Bool { get }
+    var startDay: Date { get }
+    var endDay: Date { get }
 }
