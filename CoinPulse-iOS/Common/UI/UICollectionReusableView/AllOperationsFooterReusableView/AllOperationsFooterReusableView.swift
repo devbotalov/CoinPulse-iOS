@@ -21,7 +21,6 @@ final class AllOperationsFooterReusableView: BaseCollectionReusableView {
     
     private let arrowImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(resource: .downArrow)
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor(resource: .accentGray)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +67,8 @@ extension AllOperationsFooterReusableView: AllOperationsFooterReusableViewProtoc
         self.delegate = delegate
         
         titleLabel.text = isCollapsed ? "View more" : "View less"
+        arrowImageView.image = UIImage(resource: isCollapsed ? .downArrow : .upArrow)
+        
         arrowImageView.shakeAnimation()
     }
 }
