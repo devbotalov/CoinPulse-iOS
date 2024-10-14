@@ -38,7 +38,6 @@ extension CoreDataManager {
             category.willAccessValue(forKey: "operations")
         }
         
-        print("===", categories)
         return categories
     }
 }

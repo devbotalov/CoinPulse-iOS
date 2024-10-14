@@ -159,6 +159,7 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
             self?.calendarDays = viewModel.calendarDays
             self?.operations = viewModel.operations
             self?.categories = viewModel.categories
+            self?.weeklyAmount = viewModel.weeklyAmount
             self?.updateSnapshot()
         }
     }

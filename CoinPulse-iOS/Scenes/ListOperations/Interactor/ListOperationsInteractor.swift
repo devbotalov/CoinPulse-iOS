@@ -56,10 +56,15 @@ final class ListOperationsInteractor: ListOperations.BusinessLogic {
             
             operationsPerDay = operationsPerWeek.filter({ $0.date >= startDay && $0.date < endDay })
             
+            let weeklyAmount = operationsPerWeek
+                .map({ $0.amount })
+                .reduce(0, +)
+            
             let response = ListOperations.FetchInitialWeekData.Response(
                 calendarDays: calendarDays,
                 operations: operationsPerDay,
-                categories: categoriesPerWeek
+                categories: categoriesPerWeek,
+                weeklyAmount: weeklyAmount
             )
             
             presenter?.presentFetchedInitialData(response: response)

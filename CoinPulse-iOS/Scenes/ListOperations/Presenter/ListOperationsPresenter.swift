@@ -14,7 +14,8 @@ final class ListOperationsPresenter: ListOperations.PresentationLogic {
         let viewModel = ListOperations.FetchInitialWeekData.ViewModel(
             calendarDays: response.calendarDays,
             operations: response.operations,
-            categories: response.categories
+            categories: response.categories,
+            weeklyAmount: response.weeklyAmount
         )
         
         viewController?.displayFetchedInitialData(viewModel: viewModel)
