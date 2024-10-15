@@ -11,12 +11,15 @@ final class ListOperationsRouter: ListOperations.RoutingLogic {
     var viewController: ListOperations.DisplayLogic?
     var dataStore: ListOperations.DataStore?
     
+    private let serviceLocator = ServiceLocator.shared
+    
     func routeToAllCategories() {
-        guard let source = viewController as? ListOperations.ViewController else { return }
+        guard
+            let source = viewController as? ListOperations.ViewController,
+            let destination = serviceLocator.resolve() as AllCategories.ViewController?
+        else { return }
         
-        let destination = AllCategoriesViewController()
         destination.hidesBottomBarWhenPushed = true
-        
         navigateToAllCategories(source: source, destination: destination)
     }
 }

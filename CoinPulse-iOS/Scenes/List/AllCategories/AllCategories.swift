@@ -23,14 +23,45 @@ struct AllCategories: ModuleProtocol {
     typealias Router = AllCategoriesRouter
 }
 
-protocol AllCategoriesDataStore {}
+protocol AllCategoriesDataStore {
+    var categories: [CategoryEntity] { get }
+}
 
 protocol AllCategoriesDataPassing {}
 
-protocol AllCategoriesDisplayLogic {}
+protocol AllCategoriesDisplayLogic {
+    func displayFetchedCategories(viewModel: AllCategories.FetchCategories.ViewModel)
+}
 
-protocol AllCategoriesPresentationLogic {}
+protocol AllCategoriesPresentationLogic {
+    func presentFetchedCategories(response: AllCategories.FetchCategories.Response)
+}
 
-protocol AllCategoriesBusinessLogic {}
+protocol AllCategoriesBusinessLogic {
+    func fetchCategories(request: AllCategories.FetchCategories.Request)
+}
 
 protocol AllCategoriesRoutingLogic {}
+
+extension AllCategories {
+    enum Sections: Hashable {
+        case categories
+        case unknown
+    }
+}
+
+extension AllCategories {
+    enum FetchCategories {
+        struct Request: CoreDataRequestProtocol {
+            typealias Response = [CategoryEntity]
+        }
+        
+        struct Response {
+            let categories: [CategoryEntity]
+        }
+        
+        struct ViewModel {
+            let categories: [CategoryEntity]
+        }
+    }
+}
