@@ -806,8 +806,8 @@
 		657A161F2CB2F40200C6CF1F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				655D78242CB3B16B00773C64 /* AddOperation */,
-				655D78362CB3D21B00773C64 /* ListOperations */,
+				65A5E2182CBE378700D94763 /* Add */,
+				65A5E2192CBE378F00D94763 /* List */,
 				655D785B2CB3D6BD00773C64 /* Profile */,
 			);
 			path = Scenes;
@@ -883,6 +883,22 @@
 				657A16382CB3AAD100C6CF1F /* TabBarItem.swift */,
 			);
 			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		65A5E2182CBE378700D94763 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				655D78242CB3B16B00773C64 /* AddOperation */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		65A5E2192CBE378F00D94763 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				655D78362CB3D21B00773C64 /* ListOperations */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		65E6284E2CB7DE1C00319F3E /* CalendarDay */ = {
