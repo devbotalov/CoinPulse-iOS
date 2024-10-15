@@ -34,6 +34,12 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         fetchInitialWeekData(weekFromCurrent: weekFromCurrent)
     }
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+    }
+    
     override func setupCollectionView() {
         super.setupCollectionView()
         collectionView.collectionViewLayout = setupCollectionViewLayout()

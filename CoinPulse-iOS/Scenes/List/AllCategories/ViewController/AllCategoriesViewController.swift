@@ -9,4 +9,9 @@ import UIKit
 
 final class AllCategoriesViewController: AllCategories.DisplayLogic {
     var interactor: AllCategories.BusinessLogic?
+    
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        title = "All categories"
+    }
 }
