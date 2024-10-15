@@ -7,6 +7,11 @@
 
 import Foundation
 
-protocol LargeHeaderReusableViewProtocol {
-    func configureView(with title: String, titleButton: String?, delegate: LargeHeaderReusableViewDelegate?)
+protocol LargeHeaderReusableViewProtocol {    
+    func configureView(
+        with title: String,
+        titleButton: String?,
+        delegate: LargeHeaderReusableViewDelegate?,
+        callBack: DefaultHandler?
+    )
 }

@@ -110,7 +110,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         header.configureView(
                             with: "All operations", 
                             titleButton: "View all",
-                            delegate: self
+                            delegate: self,
+                            callBack: nil
                         )
                         return header
                         
@@ -119,7 +120,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         header.configureView(
                             with: "Categories",
                             titleButton: "View all",
-                            delegate: self
+                            delegate: self,
+                            callBack: { self?.router?.routeToAllCategories() }
                         )
                         return header
                         

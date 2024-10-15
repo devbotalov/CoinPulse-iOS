@@ -98,6 +98,7 @@
 		65A5E2272CBE391600D94763 /* AllCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2262CBE391600D94763 /* AllCategoriesPresenter.swift */; };
 		65A5E2292CBE392D00D94763 /* AllCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2282CBE392D00D94763 /* AllCategoriesInteractor.swift */; };
 		65A5E22B2CBE394B00D94763 /* AllCategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */; };
+		65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */; };
 		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
 		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -196,6 +197,7 @@
 		65A5E2262CBE391600D94763 /* AllCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesPresenter.swift; sourceTree = "<group>"; };
 		65A5E2282CBE392D00D94763 /* AllCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesInteractor.swift; sourceTree = "<group>"; };
 		65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesRouter.swift; sourceTree = "<group>"; };
+		65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHandler.swift; sourceTree = "<group>"; };
 		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -543,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				655D78B52CB4086D00773C64 /* CollectionViewContaining.swift */,
+				65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */,
 			);
 			path = Typealias;
 			sourceTree = "<group>";
@@ -1130,6 +1133,7 @@
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,
 				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
+				65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */,
 				6564E9382CB6BFD100262A90 /* DefaultRequestProtocol.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */,

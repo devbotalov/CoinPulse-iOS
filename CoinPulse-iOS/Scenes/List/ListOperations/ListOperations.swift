@@ -49,7 +49,9 @@ protocol ListOperationsBusinessLogic {
     func fetchOperationsByDay(request: ListOperations.FetchOperationsByWeek.Request)
 }
 
-protocol ListOperationsRoutingLogic {}
+protocol ListOperationsRoutingLogic {
+    func routeToAllCategories()
+}
 
 extension ListOperations {
     

@@ -30,6 +30,7 @@ final class LargeHeaderReusableView: BaseCollectionReusableView {
     }()
     
     private weak var delegate: LargeHeaderReusableViewDelegate?
+    private var callBack: DefaultHandler?
     
     override func setupReusableView() {
         super.setupReusableView()
@@ -64,8 +65,14 @@ final class LargeHeaderReusableView: BaseCollectionReusableView {
 }
 
 extension LargeHeaderReusableView: LargeHeaderReusableViewProtocol {
-    func configureView(with title: String, titleButton: String?, delegate: LargeHeaderReusableViewDelegate?) {
+    func configureView(
+        with title: String,
+        titleButton: String?,
+        delegate: LargeHeaderReusableViewDelegate?,
+        callBack: DefaultHandler?
+    ) {
         self.delegate = delegate
+        self.callBack = callBack
         titleLabel.text = title
         actionButton.setTitle(titleButton, for: .normal)
         actionButton.isHidden = titleButton != nil ? false : true
@@ -74,6 +81,8 @@ extension LargeHeaderReusableView: LargeHeaderReusableViewProtocol {
 
 private extension LargeHeaderReusableView {
     @objc func actionButtonDidTapped() {
-        delegate?.actionButtonDidTapped()
+        // MARK: While we are using it CALLBACK
+        // delegate?.actionButtonDidTapped()
+        callBack?()
     }
 }
