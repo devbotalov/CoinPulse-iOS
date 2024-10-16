@@ -52,6 +52,9 @@ final class AllCategoriesCategoryCell: BaseCollectionViewCell {
         return stackView
     }()
     
+    private let currentCalendar = Calendar.current
+    private let currentDate = Date.now
+    
     override func setupCell() {
         super.setupCell()
         setCornerRadius(12)
@@ -96,7 +99,10 @@ final class AllCategoriesCategoryCell: BaseCollectionViewCell {
 
 extension AllCategoriesCategoryCell: AllCategoriesCategoryCellProtocol {
     func configureCell(category: CategoryEntity?) {
-        guard let category else { return }
+        guard
+            let category,
+            let operationsThisCategory = category.operations as? Set<OperationEntity>
+        else { return }
         
         titleLabel.text = category.title
         
@@ -105,19 +111,52 @@ extension AllCategoriesCategoryCell: AllCategoriesCategoryCellProtocol {
             color: UIColor(hex: category.color)
         )
         
+        let perWeekDate = currentCalendar.date(
+            byAdding: .weekOfYear,
+            value: -1,
+            to: currentDate
+        ) ?? currentDate
+        
+        let perMonthDate = currentCalendar.date(
+            byAdding: .month,
+            value: -1,
+            to: currentDate
+        ) ?? currentDate
+        
+        let perYearDate = currentCalendar.date(
+            byAdding: .year,
+            value: -1,
+            to: currentDate
+        ) ?? currentDate
+        
+        let perWeekOperations = operationsThisCategory.filter({ $0.date > perWeekDate })
+        let perWeekOperationsAmount = perWeekOperations
+            .map({ $0.amount })
+            .reduce(0, +)
+        
+        let perMonthOperations = operationsThisCategory.filter({ $0.date > perMonthDate })
+        let perMonthOperationsAmount = perMonthOperations
+            .map({ $0.amount })
+            .reduce(0, +)
+        
+        let perYearOperations = operationsThisCategory.filter({ $0.date > perYearDate })
+        let perYearOperationsAmount = perYearOperations
+            .map({ $0.amount })
+            .reduce(0, +)
+        
         weekStatisticsView.configureView(
             title: "Per week",
-            subtitle: Double(200).toCurrency
+            subtitle: perWeekOperationsAmount.toCurrency
         )
         
         monthStatisticsView.configureView(
             title: "Per month",
-            subtitle: Double(400).toCurrency
+            subtitle: perMonthOperationsAmount.toCurrency
         )
         
         yearStatisticsView.configureView(
             title: "Per year",
-            subtitle: Double(600).toCurrency
+            subtitle: perYearOperationsAmount.toCurrency
         )
         
         backgroundColor = UIColor(hex: category.color).withAlphaComponent(0.2)
