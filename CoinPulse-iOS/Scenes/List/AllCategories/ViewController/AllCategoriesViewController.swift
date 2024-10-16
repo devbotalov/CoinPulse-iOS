@@ -16,7 +16,7 @@ final class AllCategoriesViewController: AllCategories.DisplayLogic {
     
     var interactor: AllCategories.BusinessLogic?
     
-    private var categories: [CategoryEntity] = []
+    private var viewModel: AllCategories.FetchCategories.ViewModel?
     
     private var dataSource: UICollectionViewDiffableDataSource<AllCategories.Sections, ModelForSection>!
     private var snapshot: NSDiffableDataSourceSnapshot<AllCategories.Sections, ModelForSection>!
@@ -59,9 +59,18 @@ final class AllCategoriesViewController: AllCategories.DisplayLogic {
         
         dataSource = UICollectionViewDiffableDataSource<AllCategories.Sections, ModelForSection>(collectionView: collectionView) { [weak self] collectionView, indexPath, _ in
             switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
-                case .categories:
+                case .expense:
                     let cell = collectionView.dequeueReusableCell(for: indexPath) as AllCategoriesCategoryCell
-                    cell.configureCell(category: self?.categories[indexPath.item])
+                    cell.configureCell(
+                        category: self?.viewModel?.expenseCategories?[indexPath.item]
+                    )
+                    return cell
+                    
+                case .income:
+                    let cell = collectionView.dequeueReusableCell(for: indexPath) as AllCategoriesCategoryCell
+                    cell.configureCell(
+                        category: self?.viewModel?.incomeCategories?[indexPath.item]
+                    )
                     return cell
                     
                 case .unknown:
@@ -72,10 +81,20 @@ final class AllCategoriesViewController: AllCategories.DisplayLogic {
         dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
             if kind == UICollectionView.elementKindSectionHeader {
                 switch self?.sections.getSection(by: indexPath.section) ?? .unknown {
-                    case .categories:
+                    case .expense:
                         let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
                         header.configureView(
                             with: "Expense categories",
+                            titleButton: nil,
+                            delegate: nil,
+                            callBack: nil
+                        )
+                        return header
+                        
+                    case .income:
+                        let header = collectionView.dequeueHeader(for: indexPath) as LargeHeaderReusableView
+                        header.configureView(
+                            with: "Income categories",
                             titleButton: nil,
                             delegate: nil,
                             callBack: nil
@@ -108,7 +127,7 @@ final class AllCategoriesViewController: AllCategories.DisplayLogic {
     }
     
     func displayFetchedCategories(viewModel: AllCategories.FetchCategories.ViewModel) {
-        self.categories = viewModel.categories
+        self.viewModel = viewModel
         updateSnapshot()
     }
 }
@@ -129,11 +148,18 @@ private extension AllCategories.ViewController {
         snapshot = NSDiffableDataSourceSnapshot<AllCategories.Sections, ModelForSection>()
         sections.removeAll()
         
-        if !categories.isEmpty  {
-            sections.appendSection(.categories)
-            snapshot.appendSections([.categories])
-            let categories = categories.map { ModelForSection.categories($0) }
-            snapshot.appendItems(categories, toSection: .categories)
+        if let expenseCategories = viewModel?.expenseCategories, !expenseCategories.isEmpty {
+            sections.appendSection(.expense)
+            snapshot.appendSections([.expense])
+            let categories = expenseCategories.map { ModelForSection.categories($0) }
+            snapshot.appendItems(categories, toSection: .expense)
+        }
+        
+        if let incomeCategories = viewModel?.incomeCategories, !incomeCategories.isEmpty {
+            sections.appendSection(.income)
+            snapshot.appendSections([.income])
+            let categories = incomeCategories.map { ModelForSection.categories($0) }
+            snapshot.appendItems(categories, toSection: .income)
         }
         
         dataSource.apply(snapshot, animatingDifferences: true)

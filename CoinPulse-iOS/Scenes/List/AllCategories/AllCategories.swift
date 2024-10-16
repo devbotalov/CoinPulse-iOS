@@ -24,7 +24,8 @@ struct AllCategories: ModuleProtocol {
 }
 
 protocol AllCategoriesDataStore {
-    var categories: [CategoryEntity] { get }
+    var expenseCategories: [CategoryEntity] { get }
+    var incomeCategories: [CategoryEntity] { get }
 }
 
 protocol AllCategoriesDataPassing {}
@@ -45,7 +46,8 @@ protocol AllCategoriesRoutingLogic {}
 
 extension AllCategories {
     enum Sections: Hashable {
-        case categories
+        case expense
+        case income
         case unknown
     }
 }
@@ -57,11 +59,13 @@ extension AllCategories {
         }
         
         struct Response {
-            let categories: [CategoryEntity]
+            let expenseCategories: [CategoryEntity]?
+            let incomeCategories: [CategoryEntity]?
         }
         
         struct ViewModel {
-            let categories: [CategoryEntity]
+            let expenseCategories: [CategoryEntity]?
+            let incomeCategories: [CategoryEntity]?
         }
     }
 }
