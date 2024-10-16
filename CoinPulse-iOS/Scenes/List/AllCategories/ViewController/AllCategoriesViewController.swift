@@ -31,6 +31,15 @@ final class AllCategoriesViewController: AllCategories.DisplayLogic {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         title = "All categories"
+        
+        let addBarButtonItem: UIBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(addBarButtonItemTapped)
+        )
+        
+        navigationItem.rightBarButtonItem = addBarButtonItem
     }
     
     override func setupCollectionView() {
@@ -163,6 +172,10 @@ private extension AllCategories.ViewController {
         }
         
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+    @objc func addBarButtonItemTapped() {
+        // Tap
     }
 }
 
