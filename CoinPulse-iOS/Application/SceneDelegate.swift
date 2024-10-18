@@ -66,6 +66,7 @@ private extension SceneDelegate {
         AddOperation.Configurator.registerDependencies(in: serviceLocator)
         ListOperations.Configurator.registerDependencies(in: serviceLocator)
         AllCategories.Configurator.registerDependencies(in: serviceLocator)
+        AddCategory.Configurator.registerDependencies(in: serviceLocator)
         Profile.Configurator.registerDependencies(in: serviceLocator)
     }
 }

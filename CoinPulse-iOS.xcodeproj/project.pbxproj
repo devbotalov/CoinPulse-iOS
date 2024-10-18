@@ -110,6 +110,13 @@
 		65BD369D2CBFB24400189EC7 /* BaseBottomModalPresented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */; };
 		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
 		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
+		65FF4B0B2CC24215003BE236 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B0A2CC24215003BE236 /* EmojiTextField.swift */; };
+		65FF4B0E2CC24288003BE236 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B0D2CC24288003BE236 /* AddCategory.swift */; };
+		65FF4B152CC2435D003BE236 /* AddCategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B142CC2435D003BE236 /* AddCategoryConfigurator.swift */; };
+		65FF4B172CC24398003BE236 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B162CC24398003BE236 /* AddCategoryViewController.swift */; };
+		65FF4B192CC243B0003BE236 /* AddCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B182CC243B0003BE236 /* AddCategoryPresenter.swift */; };
+		65FF4B1B2CC243CC003BE236 /* AddCategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B1A2CC243CC003BE236 /* AddCategoryInteractor.swift */; };
+		65FF4B1D2CC243E6003BE236 /* AddCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B1C2CC243E6003BE236 /* AddCategoryRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +225,13 @@
 		65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalPresented.swift; sourceTree = "<group>"; };
 		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
+		65FF4B0A2CC24215003BE236 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
+		65FF4B0D2CC24288003BE236 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
+		65FF4B142CC2435D003BE236 /* AddCategoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryConfigurator.swift; sourceTree = "<group>"; };
+		65FF4B162CC24398003BE236 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		65FF4B182CC243B0003BE236 /* AddCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryPresenter.swift; sourceTree = "<group>"; };
+		65FF4B1A2CC243CC003BE236 /* AddCategoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryInteractor.swift; sourceTree = "<group>"; };
+		65FF4B1C2CC243E6003BE236 /* AddCategoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -869,12 +883,13 @@
 		657A16202CB2F4EC00C6CF1F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				65BD36942CBFB11D00189EC7 /* UIViewController */,
 				655D78AB2CB3FC4600773C64 /* Base */,
 				655D78C12CB40B4300773C64 /* ReusableView */,
-				655D78C52CB41B5F00773C64 /* UICollectionView */,
 				655D78A82CB3FC0800773C64 /* UICollectionReusableView */,
+				655D78C52CB41B5F00773C64 /* UICollectionView */,
+				65FF4B092CC24201003BE236 /* UITextField */,
 				651B2B742CB4658500D8EAF1 /* UIView */,
+				65BD36942CBFB11D00189EC7 /* UIViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -954,6 +969,7 @@
 			children = (
 				655D78362CB3D21B00773C64 /* ListOperations */,
 				65A5E21A2CBE381800D94763 /* AllCategories */,
+				65FF4B0C2CC24278003BE236 /* AddCategory */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1038,6 +1054,67 @@
 			path = CalendarDay;
 			sourceTree = "<group>";
 		};
+		65FF4B092CC24201003BE236 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B0A2CC24215003BE236 /* EmojiTextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		65FF4B0C2CC24278003BE236 /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B0D2CC24288003BE236 /* AddCategory.swift */,
+				65FF4B0F2CC24339003BE236 /* Configurator */,
+				65FF4B102CC2433D003BE236 /* ViewController */,
+				65FF4B112CC24342003BE236 /* Presenter */,
+				65FF4B122CC24345003BE236 /* Interactor */,
+				65FF4B132CC24348003BE236 /* Router */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		65FF4B0F2CC24339003BE236 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B142CC2435D003BE236 /* AddCategoryConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		65FF4B102CC2433D003BE236 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B162CC24398003BE236 /* AddCategoryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		65FF4B112CC24342003BE236 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B182CC243B0003BE236 /* AddCategoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		65FF4B122CC24345003BE236 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B1A2CC243CC003BE236 /* AddCategoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		65FF4B132CC24348003BE236 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				65FF4B1C2CC243E6003BE236 /* AddCategoryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1112,6 +1189,7 @@
 			files = (
 				655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */,
 				6564E9322CB6AEC300262A90 /* OperationType.swift in Sources */,
+				65FF4B1B2CC243CC003BE236 /* AddCategoryInteractor.swift in Sources */,
 				6564E90B2CB66AD300262A90 /* CalendarHeaderReusableViewDelegate.swift in Sources */,
 				65BD36962CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift in Sources */,
 				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
@@ -1142,6 +1220,7 @@
 				6564E9152CB6880C00262A90 /* BottomRoundedBackgroundView.swift in Sources */,
 				6564E90D2CB66ADA00262A90 /* CalendarHeaderReusableView.swift in Sources */,
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
+				65FF4B172CC24398003BE236 /* AddCategoryViewController.swift in Sources */,
 				65A5E2232CBE38B700D94763 /* AllCategoriesConfigurator.swift in Sources */,
 				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
@@ -1181,11 +1260,15 @@
 				655D78742CB3E43400773C64 /* CoreDataManagerProtocol.swift in Sources */,
 				657A162E2CB2F8A800C6CF1F /* ConfiguratorProtocol.swift in Sources */,
 				6564E9282CB6ABCD00262A90 /* CategoryEntity+CreateEntity.swift in Sources */,
+				65FF4B0E2CC24288003BE236 /* AddCategory.swift in Sources */,
 				6564E91C2CB692ED00262A90 /* ListOperationsOperationCellLayout.swift in Sources */,
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
+				65FF4B1D2CC243E6003BE236 /* AddCategoryRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,
+				65FF4B192CC243B0003BE236 /* AddCategoryPresenter.swift in Sources */,
 				65BD369B2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift in Sources */,
+				65FF4B152CC2435D003BE236 /* AddCategoryConfigurator.swift in Sources */,
 				651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
 				6528EA702CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift in Sources */,
@@ -1198,6 +1281,7 @@
 				655D78662CB3D76C00773C64 /* ProfileViewController.swift in Sources */,
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,
+				65FF4B0B2CC24215003BE236 /* EmojiTextField.swift in Sources */,
 				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */,
 				6564E9382CB6BFD100262A90 /* DefaultRequestProtocol.swift in Sources */,
