@@ -12,7 +12,7 @@ struct AddCategory: ModuleProtocol {
     
     typealias DataStore = AddCategoryDataStore
     
-    typealias DisplayLogic = BaseBottomModalViewController<Router> & AddCategoryDisplayLogic
+    typealias DisplayLogic = BaseViewController<Router> & AddCategoryDisplayLogic
     typealias PresentationLogic = AddCategoryPresentationLogic
     typealias BusinessLogic = AddCategoryBusinessLogic & DataStore
     typealias RoutingLogic = AddCategoryRoutingLogic & AddCategoryDataPassing & NSObject

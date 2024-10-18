@@ -105,9 +105,6 @@
 		65A5E22B2CBE394B00D94763 /* AllCategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */; };
 		65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */; };
 		65BD36962CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */; };
-		65BD36982CBFB1B500189EC7 /* BaseBottomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */; };
-		65BD369B2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */; };
-		65BD369D2CBFB24400189EC7 /* BaseBottomModalPresented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */; };
 		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
 		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
 		65FF4B0B2CC24215003BE236 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B0A2CC24215003BE236 /* EmojiTextField.swift */; };
@@ -220,9 +217,6 @@
 		65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesRouter.swift; sourceTree = "<group>"; };
 		65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHandler.swift; sourceTree = "<group>"; };
 		65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDynamicHeightViewController.swift; sourceTree = "<group>"; };
-		65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalViewController.swift; sourceTree = "<group>"; };
-		65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalPanInteractiveTransition.swift; sourceTree = "<group>"; };
-		65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalPresented.swift; sourceTree = "<group>"; };
 		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
 		65FF4B0A2CC24215003BE236 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
@@ -897,9 +891,7 @@
 		657A16212CB2F4F200C6CF1F /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				65BD36992CBFB1E500189EC7 /* CustomTransitions */,
 				657A16242CB2F64F00C6CF1F /* BaseViewController.swift */,
-				65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -1034,15 +1026,6 @@
 				65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */,
 			);
 			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		65BD36992CBFB1E500189EC7 /* CustomTransitions */ = {
-			isa = PBXGroup;
-			children = (
-				65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */,
-				65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */,
-			);
-			path = CustomTransitions;
 			sourceTree = "<group>";
 		};
 		65E6284E2CB7DE1C00319F3E /* CalendarDay */ = {
@@ -1230,7 +1213,6 @@
 				6564E90F2CB6739200262A90 /* UIColor+BorderColor.swift in Sources */,
 				65A5E21C2CBE383C00D94763 /* AllCategories.swift in Sources */,
 				6564E9032CB6625F00262A90 /* ListOperationsCalendarDayCellLayout.swift in Sources */,
-				65BD369D2CBFB24400189EC7 /* BaseBottomModalPresented.swift in Sources */,
 				651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
@@ -1267,7 +1249,6 @@
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,
 				65FF4B192CC243B0003BE236 /* AddCategoryPresenter.swift in Sources */,
-				65BD369B2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift in Sources */,
 				65FF4B152CC2435D003BE236 /* AddCategoryConfigurator.swift in Sources */,
 				651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
@@ -1287,7 +1268,6 @@
 				6564E9382CB6BFD100262A90 /* DefaultRequestProtocol.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */,
-				65BD36982CBFB1B500189EC7 /* BaseBottomModalViewController.swift in Sources */,
 				65A5E2292CBE392D00D94763 /* AllCategoriesInteractor.swift in Sources */,
 				651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */,
 				6528EA722CBE5A3600847442 /* AllCategoriesCategoryCell.swift in Sources */,
