@@ -114,6 +114,7 @@
 		65FF4B192CC243B0003BE236 /* AddCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B182CC243B0003BE236 /* AddCategoryPresenter.swift */; };
 		65FF4B1B2CC243CC003BE236 /* AddCategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B1A2CC243CC003BE236 /* AddCategoryInteractor.swift */; };
 		65FF4B1D2CC243E6003BE236 /* AddCategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF4B1C2CC243E6003BE236 /* AddCategoryRouter.swift */; };
+		65FF4B252CC258E7003BE236 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65FF4B242CC258E7003BE236 /* SwiftEntryKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FF4B252CC258E7003BE236 /* SwiftEntryKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,6 +1116,9 @@
 			dependencies = (
 			);
 			name = "CoinPulse-iOS";
+			packageProductDependencies = (
+				65FF4B242CC258E7003BE236 /* SwiftEntryKit */,
+			);
 			productName = "CoinPulse-iOS";
 			productReference = 657A16022CB27C7C00C6CF1F /* CoinPulse-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -1143,6 +1148,9 @@
 				ru,
 			);
 			mainGroup = 657A15F92CB27C7C00C6CF1F;
+			packageReferences = (
+				65FF4B232CC258E7003BE236 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+			);
 			productRefGroup = 657A16032CB27C7C00C6CF1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1498,6 +1506,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65FF4B232CC258E7003BE236 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huri000/SwiftEntryKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65FF4B242CC258E7003BE236 /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65FF4B232CC258E7003BE236 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */ = {
