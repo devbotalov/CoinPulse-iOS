@@ -12,6 +12,11 @@
 		651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B792CB465E700D8EAF1 /* BaseView.swift */; };
 		651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B7B2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift */; };
 		651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */; };
+		6528EA702CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA6F2CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift */; };
+		6528EA722CBE5A3600847442 /* AllCategoriesCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA712CBE5A3600847442 /* AllCategoriesCategoryCell.swift */; };
+		6528EA742CBE5A3D00847442 /* AllCategoriesCategoryCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA732CBE5A3D00847442 /* AllCategoriesCategoryCellLayout.swift */; };
+		6528EA772CBE860F00847442 /* BriefStatisticsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA762CBE860F00847442 /* BriefStatisticsViewProtocol.swift */; };
+		6528EA792CBE861200847442 /* BriefStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA782CBE861200847442 /* BriefStatisticsView.swift */; };
 		655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78252CB3B17E00773C64 /* AddOperation.swift */; };
 		655D78292CB3B1D400773C64 /* AddOperationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */; };
 		655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D782B2CB3B45500773C64 /* AddOperationViewController.swift */; };
@@ -92,6 +97,17 @@
 		657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */; };
 		657A16392CB3AAD100C6CF1F /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A16382CB3AAD100C6CF1F /* TabBarItem.swift */; };
 		65A5E2172CBD4F5100D94763 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2162CBD4F5100D94763 /* Double+Currency.swift */; };
+		65A5E21C2CBE383C00D94763 /* AllCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E21B2CBE383C00D94763 /* AllCategories.swift */; };
+		65A5E2232CBE38B700D94763 /* AllCategoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2222CBE38B700D94763 /* AllCategoriesConfigurator.swift */; };
+		65A5E2252CBE38F000D94763 /* AllCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2242CBE38F000D94763 /* AllCategoriesViewController.swift */; };
+		65A5E2272CBE391600D94763 /* AllCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2262CBE391600D94763 /* AllCategoriesPresenter.swift */; };
+		65A5E2292CBE392D00D94763 /* AllCategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E2282CBE392D00D94763 /* AllCategoriesInteractor.swift */; };
+		65A5E22B2CBE394B00D94763 /* AllCategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */; };
+		65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */; };
+		65BD36962CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */; };
+		65BD36982CBFB1B500189EC7 /* BaseBottomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */; };
+		65BD369B2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */; };
+		65BD369D2CBFB24400189EC7 /* BaseBottomModalPresented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */; };
 		65E628502CB7DE2800319F3E /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6284F2CB7DE2800319F3E /* CalendarDay.swift */; };
 		65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +118,11 @@
 		651B2B792CB465E700D8EAF1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		651B2B7B2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEmojiViewProtocol.swift; sourceTree = "<group>"; };
 		651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		6528EA6F2CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesCategoryCellProtocol.swift; sourceTree = "<group>"; };
+		6528EA712CBE5A3600847442 /* AllCategoriesCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesCategoryCell.swift; sourceTree = "<group>"; };
+		6528EA732CBE5A3D00847442 /* AllCategoriesCategoryCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesCategoryCellLayout.swift; sourceTree = "<group>"; };
+		6528EA762CBE860F00847442 /* BriefStatisticsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefStatisticsViewProtocol.swift; sourceTree = "<group>"; };
+		6528EA782CBE861200847442 /* BriefStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefStatisticsView.swift; sourceTree = "<group>"; };
 		655D78252CB3B17E00773C64 /* AddOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperation.swift; sourceTree = "<group>"; };
 		655D78282CB3B1D400773C64 /* AddOperationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationConfigurator.swift; sourceTree = "<group>"; };
 		655D782B2CB3B45500773C64 /* AddOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOperationViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +205,17 @@
 		657A16352CB3AA6300C6CF1F /* TabBarItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProtocol.swift; sourceTree = "<group>"; };
 		657A16382CB3AAD100C6CF1F /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		65A5E2162CBD4F5100D94763 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
+		65A5E21B2CBE383C00D94763 /* AllCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategories.swift; sourceTree = "<group>"; };
+		65A5E2222CBE38B700D94763 /* AllCategoriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesConfigurator.swift; sourceTree = "<group>"; };
+		65A5E2242CBE38F000D94763 /* AllCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesViewController.swift; sourceTree = "<group>"; };
+		65A5E2262CBE391600D94763 /* AllCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesPresenter.swift; sourceTree = "<group>"; };
+		65A5E2282CBE392D00D94763 /* AllCategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesInteractor.swift; sourceTree = "<group>"; };
+		65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesRouter.swift; sourceTree = "<group>"; };
+		65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHandler.swift; sourceTree = "<group>"; };
+		65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDynamicHeightViewController.swift; sourceTree = "<group>"; };
+		65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalViewController.swift; sourceTree = "<group>"; };
+		65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalPanInteractiveTransition.swift; sourceTree = "<group>"; };
+		65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModalPresented.swift; sourceTree = "<group>"; };
 		65E6284F2CB7DE2800319F3E /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		65E628512CB7DE3400319F3E /* CalendarDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +244,7 @@
 		651B2B742CB4658500D8EAF1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				6528EA752CBE860200847442 /* BriefStatisticsView */,
 				651B2B752CB4659000D8EAF1 /* CategoryEmojiView */,
 			);
 			path = UIView;
@@ -240,6 +273,33 @@
 				651B2B7E2CB46F3800D8EAF1 /* RoundedBackgroundView.swift */,
 			);
 			path = RoundedBackgroundView;
+			sourceTree = "<group>";
+		};
+		6528EA6D2CBE5A0300847442 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6528EA6E2CBE5A1700847442 /* AllCategoriesCategoryCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6528EA6E2CBE5A1700847442 /* AllCategoriesCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				6528EA6F2CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift */,
+				6528EA732CBE5A3D00847442 /* AllCategoriesCategoryCellLayout.swift */,
+				6528EA712CBE5A3600847442 /* AllCategoriesCategoryCell.swift */,
+			);
+			path = AllCategoriesCategoryCell;
+			sourceTree = "<group>";
+		};
+		6528EA752CBE860200847442 /* BriefStatisticsView */ = {
+			isa = PBXGroup;
+			children = (
+				6528EA762CBE860F00847442 /* BriefStatisticsViewProtocol.swift */,
+				6528EA782CBE861200847442 /* BriefStatisticsView.swift */,
+			);
+			path = BriefStatisticsView;
 			sourceTree = "<group>";
 		};
 		655D78242CB3B16B00773C64 /* AddOperation */ = {
@@ -411,14 +471,6 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
-		655D78722CB3E42800773C64 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				655D78752CB3E4CC00773C64 /* CoreDataManager */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		655D78752CB3E4CC00773C64 /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +483,7 @@
 		655D78782CB3E57E00773C64 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				655D78752CB3E4CC00773C64 /* CoreDataManager */,
 				655D787C2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -531,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				655D78B52CB4086D00773C64 /* CollectionViewContaining.swift */,
+				65A5E22F2CBE4AD300D94763 /* DefaultHandler.swift */,
 			);
 			path = Typealias;
 			sourceTree = "<group>";
@@ -779,7 +833,6 @@
 			isa = PBXGroup;
 			children = (
 				655D78782CB3E57E00773C64 /* CoreData */,
-				655D78722CB3E42800773C64 /* Managers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -806,8 +859,8 @@
 		657A161F2CB2F40200C6CF1F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				655D78242CB3B16B00773C64 /* AddOperation */,
-				655D78362CB3D21B00773C64 /* ListOperations */,
+				65A5E2182CBE378700D94763 /* Add */,
+				65A5E2192CBE378F00D94763 /* List */,
 				655D785B2CB3D6BD00773C64 /* Profile */,
 			);
 			path = Scenes;
@@ -816,6 +869,7 @@
 		657A16202CB2F4EC00C6CF1F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				65BD36942CBFB11D00189EC7 /* UIViewController */,
 				655D78AB2CB3FC4600773C64 /* Base */,
 				655D78C12CB40B4300773C64 /* ReusableView */,
 				655D78C52CB41B5F00773C64 /* UICollectionView */,
@@ -828,7 +882,9 @@
 		657A16212CB2F4F200C6CF1F /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				65BD36992CBFB1E500189EC7 /* CustomTransitions */,
 				657A16242CB2F64F00C6CF1F /* BaseViewController.swift */,
+				65BD36972CBFB1B500189EC7 /* BaseBottomModalViewController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -883,6 +939,94 @@
 				657A16382CB3AAD100C6CF1F /* TabBarItem.swift */,
 			);
 			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		65A5E2182CBE378700D94763 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				655D78242CB3B16B00773C64 /* AddOperation */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		65A5E2192CBE378F00D94763 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				655D78362CB3D21B00773C64 /* ListOperations */,
+				65A5E21A2CBE381800D94763 /* AllCategories */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		65A5E21A2CBE381800D94763 /* AllCategories */ = {
+			isa = PBXGroup;
+			children = (
+				65A5E21B2CBE383C00D94763 /* AllCategories.swift */,
+				65A5E21D2CBE383F00D94763 /* Configurator */,
+				65A5E21E2CBE384300D94763 /* ViewController */,
+				65A5E21F2CBE384900D94763 /* Presenter */,
+				65A5E2202CBE384C00D94763 /* Interactor */,
+				65A5E2212CBE385100D94763 /* Router */,
+			);
+			path = AllCategories;
+			sourceTree = "<group>";
+		};
+		65A5E21D2CBE383F00D94763 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				65A5E2222CBE38B700D94763 /* AllCategoriesConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		65A5E21E2CBE384300D94763 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6528EA6D2CBE5A0300847442 /* Cells */,
+				65A5E2242CBE38F000D94763 /* AllCategoriesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		65A5E21F2CBE384900D94763 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				65A5E2262CBE391600D94763 /* AllCategoriesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		65A5E2202CBE384C00D94763 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				65A5E2282CBE392D00D94763 /* AllCategoriesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		65A5E2212CBE385100D94763 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				65A5E22A2CBE394B00D94763 /* AllCategoriesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		65BD36942CBFB11D00189EC7 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65BD36952CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		65BD36992CBFB1E500189EC7 /* CustomTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				65BD369A2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift */,
+				65BD369C2CBFB24400189EC7 /* BaseBottomModalPresented.swift */,
+			);
+			path = CustomTransitions;
 			sourceTree = "<group>";
 		};
 		65E6284E2CB7DE1C00319F3E /* CalendarDay */ = {
@@ -969,6 +1113,7 @@
 				655D782F2CB3B4C300773C64 /* AddOperationRouter.swift in Sources */,
 				6564E9322CB6AEC300262A90 /* OperationType.swift in Sources */,
 				6564E90B2CB66AD300262A90 /* CalendarHeaderReusableViewDelegate.swift in Sources */,
+				65BD36962CBFB12A00189EC7 /* BaseDynamicHeightViewController.swift in Sources */,
 				655D782C2CB3B45500773C64 /* AddOperationViewController.swift in Sources */,
 				657A16342CB3A9F400C6CF1F /* BaseTabBarController.swift in Sources */,
 				655D785D2CB3D6D500773C64 /* Profile.swift in Sources */,
@@ -980,6 +1125,7 @@
 				6564E9492CB6FC0D00262A90 /* UIColor+ConvenienceForHex.swift in Sources */,
 				655D78A72CB3F57F00773C64 /* UILabel+ExtractColor.swift in Sources */,
 				6564E9122CB6872700262A90 /* TopRoundedBackgroundView.swift in Sources */,
+				65A5E22B2CBE394B00D94763 /* AllCategoriesRouter.swift in Sources */,
 				6564E9472CB6D92100262A90 /* ModelForSection.swift in Sources */,
 				655D78CE2CB41EE200773C64 /* ListOperationsCategoryCellProtocol.swift in Sources */,
 				655D78B12CB3FD8500773C64 /* LargeHeaderReusableViewProtocol.swift in Sources */,
@@ -996,19 +1142,25 @@
 				6564E9152CB6880C00262A90 /* BottomRoundedBackgroundView.swift in Sources */,
 				6564E90D2CB66ADA00262A90 /* CalendarHeaderReusableView.swift in Sources */,
 				655D78432CB3D32C00773C64 /* ListOperationsPresenter.swift in Sources */,
+				65A5E2232CBE38B700D94763 /* AllCategoriesConfigurator.swift in Sources */,
 				655D78772CB3E4D500773C64 /* CoreDataManager.swift in Sources */,
 				655D78352CB3B52400773C64 /* AddOperationPresenter.swift in Sources */,
+				6528EA792CBE861200847442 /* BriefStatisticsView.swift in Sources */,
 				655D78CC2CB41ED400773C64 /* ListOperationsCategoryCellLayout.swift in Sources */,
 				65A5E2172CBD4F5100D94763 /* Double+Currency.swift in Sources */,
 				6564E90F2CB6739200262A90 /* UIColor+BorderColor.swift in Sources */,
+				65A5E21C2CBE383C00D94763 /* AllCategories.swift in Sources */,
 				6564E9032CB6625F00262A90 /* ListOperationsCalendarDayCellLayout.swift in Sources */,
+				65BD369D2CBFB24400189EC7 /* BaseBottomModalPresented.swift in Sources */,
 				651B2B7C2CB4665700D8EAF1 /* CategoryEmojiViewProtocol.swift in Sources */,
 				655D78452CB3D33200773C64 /* ListOperationsInteractor.swift in Sources */,
 				655D78842CB3EB1200773C64 /* Data+DecodeToColor.swift in Sources */,
 				6564E8F82CB65C3000262A90 /* ListOperationsCalendarDayCell.swift in Sources */,
 				6564E92C2CB6ADE500262A90 /* String+EmojiColor.swift in Sources */,
 				6564E91A2CB68A0400262A90 /* ListOperationsOperationCellProtocol.swift in Sources */,
+				65A5E2252CBE38F000D94763 /* AllCategoriesViewController.swift in Sources */,
 				6564E9232CB6996700262A90 /* AllOperationsFooterReusableViewProtocol.swift in Sources */,
+				65A5E2272CBE391600D94763 /* AllCategoriesPresenter.swift in Sources */,
 				655D78682CB3D77200773C64 /* ProfilePresenter.swift in Sources */,
 				657A16362CB3AA6300C6CF1F /* TabBarItemProtocol.swift in Sources */,
 				655D78AA2CB3FC3700773C64 /* LargeHeaderReusableView.swift in Sources */,
@@ -1016,6 +1168,7 @@
 				6564E91F2CB6995700262A90 /* AllOperationsFooterReusableView.swift in Sources */,
 				657A16312CB2F94800C6CF1F /* ModuleProtocol.swift in Sources */,
 				655D78B62CB4086D00773C64 /* CollectionViewContaining.swift in Sources */,
+				6528EA742CBE5A3D00847442 /* AllCategoriesCategoryCellLayout.swift in Sources */,
 				655D78B32CB4060B00773C64 /* LargeHeaderReusableViewDelegate.swift in Sources */,
 				655D78C32CB40B5800773C64 /* ReusableView.swift in Sources */,
 				655D78CA2CB41EC400773C64 /* ListOperationsCategoryCell.swift in Sources */,
@@ -1032,9 +1185,12 @@
 				655D786C2CB3D77E00773C64 /* ProfileRouter.swift in Sources */,
 				655D787E2CB3E5BE00773C64 /* PersistentContainer.xcdatamodeld in Sources */,
 				655D78BA2CB40ABE00773C64 /* UICollectionView+Register.swift in Sources */,
+				65BD369B2CBFB1F100189EC7 /* BaseBottomModalPanInteractiveTransition.swift in Sources */,
 				651B2B7A2CB465E700D8EAF1 /* BaseView.swift in Sources */,
 				655D78382CB3D29600773C64 /* ListOperations.swift in Sources */,
+				6528EA702CBE5A2C00847442 /* AllCategoriesCategoryCellProtocol.swift in Sources */,
 				655D783F2CB3D31C00773C64 /* ListOperationsConfigurator.swift in Sources */,
+				6528EA772CBE860F00847442 /* BriefStatisticsViewProtocol.swift in Sources */,
 				655D78262CB3B17E00773C64 /* AddOperation.swift in Sources */,
 				655D78812CB3EAE900773C64 /* UIColor+EncodeToData.swift in Sources */,
 				655D78C02CB40B1100773C64 /* BaseCollectionViewCell.swift in Sources */,
@@ -1043,10 +1199,14 @@
 				657A16292CB2F83E00C6CF1F /* ServiceLocatorProtocol.swift in Sources */,
 				655D78932CB3EEBB00773C64 /* CategoryEntity+CoreDataClass.swift in Sources */,
 				655D78942CB3EEBB00773C64 /* CategoryEntity+CoreDataProperties.swift in Sources */,
+				65A5E2302CBE4AD300D94763 /* DefaultHandler.swift in Sources */,
 				6564E9382CB6BFD100262A90 /* DefaultRequestProtocol.swift in Sources */,
 				655D786A2CB3D77700773C64 /* ProfileInteractor.swift in Sources */,
 				65E628522CB7DE3400319F3E /* CalendarDayProtocol.swift in Sources */,
+				65BD36982CBFB1B500189EC7 /* BaseBottomModalViewController.swift in Sources */,
+				65A5E2292CBE392D00D94763 /* AllCategoriesInteractor.swift in Sources */,
 				651B2B7F2CB46F3800D8EAF1 /* RoundedBackgroundView.swift in Sources */,
+				6528EA722CBE5A3600847442 /* AllCategoriesCategoryCell.swift in Sources */,
 				657A16082CB27C7C00C6CF1F /* SceneDelegate.swift in Sources */,
 				6564E92A2CB6AD6F00262A90 /* UIColor+ToHex.swift in Sources */,
 				6564E92F2CB6AE1E00262A90 /* UIImage+AverageColor.swift in Sources */,

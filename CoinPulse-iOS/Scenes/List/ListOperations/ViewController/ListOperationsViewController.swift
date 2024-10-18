@@ -34,6 +34,12 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
         fetchInitialWeekData(weekFromCurrent: weekFromCurrent)
     }
     
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+    }
+    
     override func setupCollectionView() {
         super.setupCollectionView()
         collectionView.collectionViewLayout = setupCollectionViewLayout()
@@ -110,7 +116,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         header.configureView(
                             with: "All operations", 
                             titleButton: "View all",
-                            delegate: self
+                            delegate: self,
+                            callBack: nil
                         )
                         return header
                         
@@ -119,7 +126,8 @@ final class ListOperationsViewController: ListOperations.DisplayLogic {
                         header.configureView(
                             with: "Categories",
                             titleButton: "View all",
-                            delegate: self
+                            delegate: self,
+                            callBack: { self?.router?.routeToAllCategories() }
                         )
                         return header
                         
