@@ -175,7 +175,7 @@ private extension AllCategories.ViewController {
     }
     
     @objc func addBarButtonItemTapped() {
-        // Tap
+        router?.routeToAddCategory()
     }
 }
 

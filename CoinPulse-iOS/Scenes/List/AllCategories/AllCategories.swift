@@ -42,7 +42,9 @@ protocol AllCategoriesBusinessLogic {
     func fetchCategories(request: AllCategories.FetchCategories.Request)
 }
 
-protocol AllCategoriesRoutingLogic {}
+protocol AllCategoriesRoutingLogic {
+    func routeToAddCategory()
+}
 
 extension AllCategories {
     enum Sections: Hashable {
