@@ -1,5 +1,5 @@
 //
-//  BaseDynamicHeightViewController.swift
+//  DynamicHeightViewControllerProtocol.swift
 //  CoinPulse-iOS
 //
 //  Created by Maksim Botalov on 16.10.2024.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol BaseDynamicHeightViewController {}
+protocol DynamicHeightViewControllerProtocol {}
 
-extension BaseDynamicHeightViewController where Self: UIViewController {
+extension DynamicHeightViewControllerProtocol where Self: UIViewController {
     
     func calculatePreferredSize() -> CGSize {
         let fittingSize = CGSize(width: UIScreen.main.bounds.width, height: UIView.layoutFittingCompressedSize.height)
